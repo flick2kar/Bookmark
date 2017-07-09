@@ -1,0 +1,15 @@
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Utils\bin\Debug\Utils.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Utils\bin\Debug\Utils.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Utils\obj\Debug\Utils.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Utils\obj\Debug\Utils.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Utils\bin\Debug\Utils.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Utils\bin\Debug\Utils.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\bin\Debug\Utils.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\bin\Debug\Utils.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.pdb

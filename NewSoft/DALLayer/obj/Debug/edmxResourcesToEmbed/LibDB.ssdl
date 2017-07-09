@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="authors">
+    <Key>
+      <PropertyRef Name="AuthorID" />
+    </Key>
+    <Property Name="AuthorID" Type="int" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BookPurchase">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OPrice" Type="int" />
+  </EntityType>
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="BookName" Type="nvarchar" MaxLength="255" />
+    <Property Name="LendRate" Type="int" />
+    <Property Name="BookPrice" Type="int" />
+    <Property Name="AuthorID" Type="int" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="SubCategoryID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="SeriesID" Type="int" />
+  </EntityType>
+  <EntityType Name="booktrans">
+    <Key>
+      <PropertyRef Name="TRANSID" />
+    </Key>
+    <Property Name="BookID" Type="nvarchar" MaxLength="255" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="255" />
+    <Property Name="LendDate" Type="datetime" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="LendRate" Type="int" />
+    <Property Name="Fine" Type="int" />
+    <Property Name="Balance" Type="nvarchar" MaxLength="255" />
+    <Property Name="RenewalDays" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LibBal" Type="int" />
+    <Property Name="MemBal" Type="int" />
+    <Property Name="TRANSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="members">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="Doj" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="255" />
+    <Property Name="Landline" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="MemberType" Type="int" />
+    <Property Name="SortID" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Series">
+    <Key>
+      <PropertyRef Name="SeriesID" />
+    </Key>
+    <Property Name="SeriesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SeriesName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="WishList">
+    <Key>
+      <PropertyRef Name="WishID" />
+    </Key>
+    <Property Name="WishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberID" Type="varchar" MaxLength="255" />
+    <Property Name="BookID" Type="varchar" MaxLength="255" />
+    <Property Name="AuthorName" Type="varchar" MaxLength="255" />
+    <Property Name="BookName" Type="varchar" MaxLength="255" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="GrantDate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="LibModelStoreContainer">
+    <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="booktrans" EntityType="Self.booktrans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Series" EntityType="Self.Series" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WishList" EntityType="Self.WishList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookPurchase" EntityType="Self.BookPurchase" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[BookPurchase].[BookID] AS [BookID], 
+[BookPurchase].[OPrice] AS [OPrice]
+FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

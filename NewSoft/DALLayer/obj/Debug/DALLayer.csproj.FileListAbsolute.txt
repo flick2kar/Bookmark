@@ -1,0 +1,36 @@
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\obj\Debug\DALLayer.csprojResolveAssemblyReference.cache
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\DALLayer.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\DALLayer.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\Utils.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\Utils.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\obj\Debug\DALLayer.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\obj\Debug\DALLayer.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\EntityFramework.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\EntityFramework.xml
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\DALLayer.dll.config
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\Entities.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\DALLayer\bin\Debug\Entities.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\DALLayer.dll.config
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\DALLayer.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\DALLayer.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Entities.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\EntityFramework.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Utils.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Entities.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\EntityFramework.xml
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Utils.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.csprojResolveAssemblyReference.cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\DALLayer.dll.config
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\DALLayer.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\DALLayer.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Entities.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\EntityFramework.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Utils.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Entities.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\EntityFramework.xml
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Utils.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.csprojResolveAssemblyReference.cache
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.pdb

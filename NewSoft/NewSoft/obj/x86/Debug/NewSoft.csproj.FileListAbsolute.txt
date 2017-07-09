@@ -1,0 +1,10 @@
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\NewSoft\bin\Debug\NewSoft.exe.config
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\bin\Debug\NewSoft.exe.config
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\bin\Debug\NewSoft.exe
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\bin\Debug\NewSoft.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\obj\x86\Debug\NewSoft.csprojResolveAssemblyReference.cache
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\obj\x86\Debug\NewSoft.frmLibSoft.resources
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\obj\x86\Debug\NewSoft.Properties.Resources.resources
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\obj\x86\Debug\NewSoft.csproj.GenerateResource.Cache
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\obj\x86\Debug\NewSoft.exe
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\NewSoft\obj\x86\Debug\NewSoft.pdb

@@ -1,0 +1,24 @@
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\bin\Debug\Entities.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\bin\Debug\Entities.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\obj\Debug\Entities.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\obj\Debug\Entities.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\bin\Debug\Entities.dll.config
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\bin\Debug\EntityFramework.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\bin\Debug\EntityFramework.xml
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\bin\Debug\Entities.dll.config
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\bin\Debug\Entities.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\bin\Debug\Entities.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\bin\Debug\EntityFramework.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\bin\Debug\EntityFramework.xml
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\bin\Debug\Entities.dll.config
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\bin\Debug\Entities.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\bin\Debug\Entities.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\bin\Debug\EntityFramework.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\bin\Debug\EntityFramework.xml
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.pdb

@@ -1,0 +1,51 @@
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\NewSoft.exe.config
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\NewSoft.exe
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\NewSoft.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\obj\x86\Debug\NewSoft.csprojResolveAssemblyReference.cache
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\obj\x86\Debug\NewSoft.frmLibSoft.resources
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\obj\x86\Debug\NewSoft.Properties.Resources.resources
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\obj\x86\Debug\NewSoft.csproj.GenerateResource.Cache
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\obj\x86\Debug\NewSoft.exe
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\obj\x86\Debug\NewSoft.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\DALLayer.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\Utils.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\DALLayer.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\Utils.pdb
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\EntityFramework.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\EntityFramework.xml
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\Entities.dll
+D:\Boeing\SCORS\Code review\Learn\NewSoft\NewSoft\bin\Debug\Entities.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\NewSoft.exe
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\EntityFramework.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\NewSoft.exe.config
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\DALLayer.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\Entities.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\Utils.dll
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\DALLayer.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\Entities.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\Utils.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\EntityFramework.xml
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.csprojResolveAssemblyReference.cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.frmLibSoft.resources
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.Properties.Resources.resources
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.csproj.GenerateResource.Cache
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.exe
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.pdb
+D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\bin\Debug\NewSoft.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\NewSoft.exe.config
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.exe
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\NewSoft.exe
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\NewSoft.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\DALLayer.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\Entities.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\Utils.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\EntityFramework.dll
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\DALLayer.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\Entities.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\Utils.pdb
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\bin\Debug\EntityFramework.xml
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.csprojResolveAssemblyReference.cache
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.frmLibSoft.resources
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.Properties.Resources.resources
+D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\obj\x86\Debug\NewSoft.csproj.GenerateResource.Cache

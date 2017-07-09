@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsoftModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="NewsoftEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="authors" EntityType="NewsoftModel.author" />
+    <EntitySet Name="BookPurchases" EntityType="NewsoftModel.BookPurchase" />
+    <EntitySet Name="booktrans" EntityType="NewsoftModel.booktran" />
+    <EntitySet Name="categories" EntityType="NewsoftModel.category" />
+    <EntitySet Name="members" EntityType="NewsoftModel.member" />
+    <EntitySet Name="Series" EntityType="NewsoftModel.Series" />
+    <EntitySet Name="SubCategories" EntityType="NewsoftModel.SubCategory" />
+  </EntityContainer>
+  <EntityType Name="author">
+    <Key>
+      <PropertyRef Name="AuthorID" />
+    </Key>
+    <Property Name="AuthorID" Type="Int32" Nullable="false" />
+    <Property Name="AuthorName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BookPurchase">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OPrice" Type="Int32" />
+  </EntityType>
+  <EntityType Name="booktran">
+    <Key>
+      <PropertyRef Name="TRANSID" />
+    </Key>
+    <Property Name="BookID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MemberID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="LendDate" Type="DateTime" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="LendRate" Type="Int32" />
+    <Property Name="Fine" Type="Int32" />
+    <Property Name="Balance" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="RenewalDays" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LibBal" Type="Int32" />
+    <Property Name="MemBal" Type="Int32" />
+    <Property Name="TRANSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MemberID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MemberName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Doj" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Mobile" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Landline" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="MemberType" Type="Int32" />
+    <Property Name="SortID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Series">
+    <Key>
+      <PropertyRef Name="SeriesID" />
+    </Key>
+    <Property Name="SeriesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeriesName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

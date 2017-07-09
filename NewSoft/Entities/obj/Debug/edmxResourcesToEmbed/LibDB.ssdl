@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsoftModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="NewsoftModelStoreContainer">
+    <EntitySet Name="authors" EntityType="NewsoftModel.Store.authors" store:Type="Tables" store:Schema="dbo" store:Name="authors">
+      <DefiningQuery>SELECT 
+      [authors].[AuthorID] AS [AuthorID], 
+      [authors].[AuthorName] AS [AuthorName]
+      FROM [dbo].[authors] AS [authors]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BookPurchase" EntityType="NewsoftModel.Store.BookPurchase" store:Type="Tables" store:Schema="dbo" store:Name="BookPurchase">
+      <DefiningQuery>SELECT 
+      [BookPurchase].[BookID] AS [BookID], 
+      [BookPurchase].[OPrice] AS [OPrice]
+      FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="booktrans" EntityType="NewsoftModel.Store.booktrans" store:Type="Tables" store:Schema="dbo" store:Name="booktrans">
+      <DefiningQuery>SELECT 
+      [booktrans].[BookID] AS [BookID], 
+      [booktrans].[MemberID] AS [MemberID], 
+      [booktrans].[LendDate] AS [LendDate], 
+      [booktrans].[DueDate] AS [DueDate], 
+      [booktrans].[ReturnDate] AS [ReturnDate], 
+      [booktrans].[LendRate] AS [LendRate], 
+      [booktrans].[Fine] AS [Fine], 
+      [booktrans].[Balance] AS [Balance], 
+      [booktrans].[RenewalDays] AS [RenewalDays], 
+      [booktrans].[CreatedDate] AS [CreatedDate], 
+      [booktrans].[LibBal] AS [LibBal], 
+      [booktrans].[MemBal] AS [MemBal], 
+      [booktrans].[TRANSID] AS [TRANSID]
+      FROM [dbo].[booktrans] AS [booktrans]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="category" EntityType="NewsoftModel.Store.category" store:Type="Tables" store:Schema="dbo" store:Name="category">
+      <DefiningQuery>SELECT 
+      [category].[CategoryID] AS [CategoryID], 
+      [category].[CategoryName] AS [CategoryName]
+      FROM [dbo].[category] AS [category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="members" EntityType="NewsoftModel.Store.members" store:Type="Tables" store:Schema="dbo" store:Name="members">
+      <DefiningQuery>SELECT 
+      [members].[ID] AS [ID], 
+      [members].[MemberID] AS [MemberID], 
+      [members].[MemberName] AS [MemberName], 
+      [members].[Address] AS [Address], 
+      [members].[Notes] AS [Notes], 
+      [members].[Doj] AS [Doj], 
+      [members].[Status] AS [Status], 
+      [members].[Mobile] AS [Mobile], 
+      [members].[Landline] AS [Landline], 
+      [members].[Email] AS [Email], 
+      [members].[Amount] AS [Amount], 
+      [members].[MemberType] AS [MemberType], 
+      [members].[SortID] AS [SortID]
+      FROM [dbo].[members] AS [members]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Series" EntityType="NewsoftModel.Store.Series" store:Type="Tables" store:Schema="dbo" store:Name="Series">
+      <DefiningQuery>SELECT 
+      [Series].[SeriesID] AS [SeriesID], 
+      [Series].[SeriesName] AS [SeriesName]
+      FROM [dbo].[Series] AS [Series]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SubCategory" EntityType="NewsoftModel.Store.SubCategory" store:Type="Tables" store:Schema="dbo" store:Name="SubCategory">
+      <DefiningQuery>SELECT 
+      [SubCategory].[Id] AS [Id], 
+      [SubCategory].[CategoryID] AS [CategoryID], 
+      [SubCategory].[Name] AS [Name]
+      FROM [dbo].[SubCategory] AS [SubCategory]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.authors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="authors">
+    <Key>
+      <PropertyRef Name="AuthorID" />
+    </Key>
+    <Property Name="AuthorID" Type="int" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.BookPurchase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BookPurchase">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OPrice" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.booktrans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="booktrans">
+    <Key>
+      <PropertyRef Name="TRANSID" />
+    </Key>
+    <Property Name="BookID" Type="nvarchar" MaxLength="255" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="255" />
+    <Property Name="LendDate" Type="datetime" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="LendRate" Type="int" />
+    <Property Name="Fine" Type="int" />
+    <Property Name="Balance" Type="nvarchar" MaxLength="255" />
+    <Property Name="RenewalDays" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LibBal" Type="int" />
+    <Property Name="MemBal" Type="int" />
+    <Property Name="TRANSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.members' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="members">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="255" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="Doj" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="255" />
+    <Property Name="Landline" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="MemberType" Type="int" />
+    <Property Name="SortID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.Series' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Series">
+    <Key>
+      <PropertyRef Name="SeriesID" />
+    </Key>
+    <Property Name="SeriesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SeriesName" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Newsoft.dbo.SubCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'Newsoft.dbo.books' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="books">
+        <Property Name="BookID" Type="nvarchar" MaxLength="255" />
+        <Property Name="BookName" Type="nvarchar" MaxLength="255" />
+        <Property Name="LendRate" Type="float" />
+        <Property Name="BookPrice" Type="float" />
+        <Property Name="AuthorID" Type="float" />
+        <Property Name="CategoryID" Type="float" />
+        <Property Name="SubCategoryID" Type="int" />
+        <Property Name="CreatedDate" Type="datetime" />
+        <Property Name="SeriesID" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Newsoft.dbo.LibAccount' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LibAccount">
+        <Property Name="AccountDate" Type="date" />
+        <Property Name="Category" Type="varchar(max)" />
+        <Property Name="Expense" Type="int" />
+        <Property Name="Income" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Newsoft.dbo.MemPrefBooks' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="MemPrefBooks">
+        <Property Name="MemberID" Type="varchar" MaxLength="50" />
+        <Property Name="Doj" Type="datetime" />
+        <Property Name="Lenddate" Type="datetime" />
+        <Property Name="Status" Type="bit" />
+        <Property Name="PrefBooks" Type="varchar(max)" />
+      </EntityType>-->
+</Schema>
