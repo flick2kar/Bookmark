@@ -62,6 +62,7 @@
             this.lstNumbers = new System.Windows.Forms.ComboBox();
             this.gridMembers = new System.Windows.Forms.DataGridView();
             this.pageTrans = new System.Windows.Forms.TabPage();
+            this.lblMemberNotes = new System.Windows.Forms.Label();
             this.lblTransId = new System.Windows.Forms.Label();
             this.layoutTrans = new System.Windows.Forms.TableLayoutPanel();
             this.gridTrans = new System.Windows.Forms.DataGridView();
@@ -137,7 +138,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDeleteBook = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
-            this.txtLendrate = new System.Windows.Forms.TextBox();
+            this.txtOrgprice = new System.Windows.Forms.TextBox();
             this.txtBookPrice = new System.Windows.Forms.TextBox();
             this.lstAuthor = new System.Windows.Forms.ComboBox();
             this.txtBookName = new System.Windows.Forms.TextBox();
@@ -167,7 +168,6 @@
             this.lblAmtTrans = new System.Windows.Forms.Label();
             this.lblAccTrans = new System.Windows.Forms.Label();
             this.dateAcc = new System.Windows.Forms.DateTimePicker();
-            this.lblMemberNotes = new System.Windows.Forms.Label();
             this.pageMember.SuspendLayout();
             this.memLayout.SuspendLayout();
             this.memPanel.SuspendLayout();
@@ -535,6 +535,14 @@
             this.pageTrans.Size = new System.Drawing.Size(960, 664);
             this.pageTrans.TabIndex = 2;
             this.pageTrans.Text = "Transaction";
+            // 
+            // lblMemberNotes
+            // 
+            this.lblMemberNotes.AutoSize = true;
+            this.lblMemberNotes.Location = new System.Drawing.Point(9, 7);
+            this.lblMemberNotes.Name = "lblMemberNotes";
+            this.lblMemberNotes.Size = new System.Drawing.Size(0, 13);
+            this.lblMemberNotes.TabIndex = 12;
             // 
             // lblTransId
             // 
@@ -1146,7 +1154,7 @@
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnDeleteBook);
             this.panel1.Controls.Add(this.btnAddBook);
-            this.panel1.Controls.Add(this.txtLendrate);
+            this.panel1.Controls.Add(this.txtOrgprice);
             this.panel1.Controls.Add(this.txtBookPrice);
             this.panel1.Controls.Add(this.lstAuthor);
             this.panel1.Controls.Add(this.txtBookName);
@@ -1260,9 +1268,9 @@
             this.lblLendRate.AutoSize = true;
             this.lblLendRate.Location = new System.Drawing.Point(169, 277);
             this.lblLendRate.Name = "lblLendRate";
-            this.lblLendRate.Size = new System.Drawing.Size(57, 13);
+            this.lblLendRate.Size = new System.Drawing.Size(54, 13);
             this.lblLendRate.TabIndex = 16;
-            this.lblLendRate.Text = "Lend Rate";
+            this.lblLendRate.Text = "Org. Price";
             this.lblLendRate.Click += new System.EventHandler(this.lblLendRate_Click);
             // 
             // lblBkPrice
@@ -1352,13 +1360,13 @@
             this.btnAddBook.UseVisualStyleBackColor = true;
             this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
-            // txtLendrate
+            // txtOrgprice
             // 
-            this.txtLendrate.Location = new System.Drawing.Point(245, 275);
-            this.txtLendrate.Name = "txtLendrate";
-            this.txtLendrate.Size = new System.Drawing.Size(46, 20);
-            this.txtLendrate.TabIndex = 8;
-            this.txtLendrate.TextChanged += new System.EventHandler(this.txtLendrate_TextChanged);
+            this.txtOrgprice.Location = new System.Drawing.Point(245, 275);
+            this.txtOrgprice.Name = "txtOrgprice";
+            this.txtOrgprice.Size = new System.Drawing.Size(46, 20);
+            this.txtOrgprice.TabIndex = 8;
+            this.txtOrgprice.TextChanged += new System.EventHandler(this.txtLendrate_TextChanged);
             // 
             // txtBookPrice
             // 
@@ -1672,14 +1680,6 @@
             this.dateAcc.Size = new System.Drawing.Size(111, 20);
             this.dateAcc.TabIndex = 0;
             // 
-            // lblMemberNotes
-            // 
-            this.lblMemberNotes.AutoSize = true;
-            this.lblMemberNotes.Location = new System.Drawing.Point(9, 7);
-            this.lblMemberNotes.Name = "lblMemberNotes";
-            this.lblMemberNotes.Size = new System.Drawing.Size(0, 13);
-            this.lblMemberNotes.TabIndex = 12;
-            // 
             // frmLibSoft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1802,7 +1802,7 @@
         protected System.Windows.Forms.Button btnClear;
         protected System.Windows.Forms.Button btnDeleteBook;
         protected System.Windows.Forms.Button btnAddBook;
-        protected System.Windows.Forms.TextBox txtLendrate;
+        protected System.Windows.Forms.TextBox txtOrgprice;
         protected System.Windows.Forms.TextBox txtBookPrice;
 
         public System.Windows.Forms.ComboBox lstAuthor;

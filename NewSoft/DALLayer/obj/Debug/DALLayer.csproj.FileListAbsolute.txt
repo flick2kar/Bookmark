@@ -34,3 +34,17 @@ D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\bin\Debug\Utils.pdb
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.csprojResolveAssemblyReference.cache
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.dll
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\DALLayer\obj\Debug\DALLayer.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\DALLayer.dll.config
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\DALLayer.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\DALLayer.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\Entities.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\EntityFramework.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\Utils.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\Entities.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\Entities.dll.config
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\EntityFramework.xml
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\bin\Debug\Utils.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\obj\Debug\DALLayer.csprojResolveAssemblyReference.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\obj\Debug\DALLayer.csproj.CoreCompileInputs.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\obj\Debug\DALLayer.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\obj\Debug\DALLayer.pdb

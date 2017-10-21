@@ -12,12 +12,14 @@ namespace Entities
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using Utils;
     
     public partial class LibEntities : DbContext
     {
         public LibEntities()
             : base("name=LibEntities")
         {
+            this.Database.Connection.ConnectionString= AppConfigSetting.GetDBConnection;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -104,6 +104,16 @@ namespace NewSoft
                 lblBookLabel.Text = ds.Rows[0]["BookName"].ToString();
         }
 
+        public static void setLendRate(TextBox txtLendRate, string bookID)
+        {
+            DataTable ds = new DataTable();
+            BookRepository bookRep = new BookRepository();
+            ds = bookRep.GetBookIDDetails(bookID);
+            txtLendRate.Text = "0";
+            if (ds.Rows.Count > 0)
+                txtLendRate.Text = Math.Round((Int32.Parse(ds.Rows[0]["BookPrice"].ToString())*(0.12))).ToString();
+        }
+
         public static DataTable ConvertGridToTable(DataGridView dsGV)
         {
             DataTable dt = new DataTable();

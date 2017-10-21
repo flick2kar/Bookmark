@@ -45,6 +45,7 @@
     <Property Name="SubCategoryID" Type="Int32" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="SeriesID" Type="Int32" />
+    <Property Name="OrgPrice" Type="Int32" />
   </EntityType>
   <EntityType Name="SubCategory">
     <Key>

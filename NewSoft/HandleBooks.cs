@@ -90,7 +90,7 @@ namespace NewSoft
                     lblBookLendTo.Text = "";
                 CommonUIMethods.setLstValue(lstAuthor, ds.Rows[0]["Authorname"].ToString());
                 txtBookPrice.Text = ds.Rows[0]["BookPrice"].ToString();
-                txtLendrate.Text = ds.Rows[0]["LendRate"].ToString();
+                txtOrgprice.Text = ds.Rows[0]["OrgPrice"].ToString();
                 CommonUIMethods.setLstValue(lstCategory, ds.Rows[0]["CategoryName"].ToString());
                 CommonUIMethods.setLstValue(lstSubcat, ds.Rows[0]["Name"].ToString());
                 CommonUIMethods.setLstValue(lstSeries, ds.Rows[0]["SeriesName"].ToString());               
@@ -155,7 +155,7 @@ namespace NewSoft
         private void btnAddBook_Click(object sender, EventArgs e)
         {            
 
-            if (txtBookId.Text == "" || txtBookName.Text == "" || lstCategory.SelectedIndex == 0 || txtBookPrice.Text == "" || txtLendrate.Text == "")
+            if (txtBookId.Text == "" || txtBookName.Text == "" || lstCategory.SelectedIndex == 0 || txtBookPrice.Text == "" || txtOrgprice.Text == "")
             {
                 MessageBox.Show("BookId/BookName/Category/Book Price/Lend Rate cannot be empty");
                 return;
@@ -175,7 +175,8 @@ namespace NewSoft
                 objBook.BookPrice = Int32.Parse(txtBookPrice.Text);
                 objBook.CategoryID = Int32.Parse(lstCategory.SelectedValue.ToString());
                 objBook.CreatedDate = DateTime.Now;
-                objBook.LendRate = Int32.Parse(txtLendrate.Text);
+                objBook.LendRate = 0;
+                objBook.OrgPrice= Int32.Parse(txtOrgprice.Text);
                 objBook.SeriesID = Int32.Parse(lstSeries.SelectedValue.ToString());
                 objBook.SubCategoryID = Int32.Parse(lstSubcat.SelectedValue.ToString());
                 bookRep.InsertBooks(objBook);
@@ -186,7 +187,7 @@ namespace NewSoft
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtBookId.Text == "" || txtBookName.Text == "" || lstCategory.SelectedIndex == 0 || txtBookPrice.Text == "" || txtLendrate.Text == "")
+            if (txtBookId.Text == "" || txtBookName.Text == "" || lstCategory.SelectedIndex == 0 || txtBookPrice.Text == "" || txtOrgprice.Text == "")
             {
                 MessageBox.Show("BookId/BookName/Category/Book Price/Lend Rate cannot be empty");
                 return;
@@ -209,7 +210,8 @@ namespace NewSoft
                     objBook.CreatedDate = DateTime.Parse(createdDate);
                 else
                     objBook.CreatedDate = DateTime.Now;
-                objBook.LendRate = Int32.Parse(txtLendrate.Text);
+                objBook.LendRate = 0;
+                objBook.OrgPrice = Int32.Parse(txtOrgprice.Text);
                 objBook.SeriesID = Int32.Parse(lstSeries.SelectedValue.ToString());
                 objBook.SubCategoryID = Int32.Parse(lstSubcat.SelectedValue.ToString());;
                 lstAuthor.SelectedText = lstAuthor.Text;

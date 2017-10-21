@@ -22,3 +22,14 @@ D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\bin\Debug\EntityFramewo
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.dll
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Entities\obj\Debug\Entities.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\Entities.dll.config
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\Entities.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\Entities.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\EntityFramework.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\Utils.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\Utils.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Debug\EntityFramework.xml
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Debug\Entities.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Debug\Entities.pdb

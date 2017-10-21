@@ -53,6 +53,7 @@ namespace NewSoft
         private void leaveBookID(object sender, EventArgs e)
         {
             CommonUIMethods.setBookLabel(lblBookLabel, txtTransBookid.Text);
+            CommonUIMethods.setLendRate(txtTransLendRate, txtTransBookid.Text);
         }
 
         #region TransEvents
@@ -455,5 +456,7 @@ namespace NewSoft
             lblMemberNotes.Text = memRep.GetMemberNotes(txtTransMemId.Text).Rows[0]["Notes"].ToString();
         }
         #endregion
+
+        
     }
 }

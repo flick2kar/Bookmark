@@ -23,5 +23,6 @@ namespace Entities
         public Nullable<int> SubCategoryID { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> SeriesID { get; set; }
+        public Nullable<int> OrgPrice { get; set; }
     }
 }

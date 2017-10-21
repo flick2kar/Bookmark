@@ -70,6 +70,10 @@ namespace DALLayer
 
         public DataTable GetLoanDetailsBooksMem(string bookID = "", string memberID = "", bool bOnlyLoaned=false)
         {
+            if(bookID.Contains("-") && !bOnlyLoaned)
+            {
+                bookID = bookID.Split('-')[0];
+            }
             DataTable ds = new DataTable();
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
@@ -77,7 +81,7 @@ namespace DALLayer
                 if(bOnlyLoaned)
                     strQuery = "select BookID,MemberID,LendDate,DueDate,ReturnDate,TransID from booktrans where bookid='" + bookID + "' and returndate is null";
                 else
-                    strQuery = "select BookID,MemberID,LendDate,DueDate,ReturnDate,TransID from booktrans where bookid='" + bookID + "' and memberid='" + memberID + "'";
+                    strQuery = "select BookID,MemberID,LendDate,DueDate,ReturnDate,TransID from booktrans where bookid like '%" + bookID + "%' and memberid='" + memberID + "'";
                 ds = dbMgr.ExecuteDataTable(CommandType.Text, strQuery);
             }
             return ds;

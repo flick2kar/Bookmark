@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LibModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="LibModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityType Name="authors">
     <Key>
       <PropertyRef Name="AuthorID" />
@@ -29,6 +29,7 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
     <Property Name="SubCategoryID" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="SeriesID" Type="int" />
+    <Property Name="OrgPrice" Type="int" />
   </EntityType>
   <EntityType Name="booktrans">
     <Key>

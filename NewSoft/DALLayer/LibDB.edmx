@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LibModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="LibModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="authors">
           <Key>
             <PropertyRef Name="AuthorID" />
@@ -34,6 +34,7 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
           <Property Name="SubCategoryID" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="SeriesID" Type="int" />
+          <Property Name="OrgPrice" Type="int" />
         </EntityType>
         <EntityType Name="booktrans">
           <Key>
@@ -171,6 +172,7 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
           <Property Name="SubCategoryID" Type="Int32" />
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="SeriesID" Type="Int32" />
+          <Property Name="OrgPrice" Type="Int32" />
         </EntityType>
         <EntityType Name="SubCategory">
           <Key>
@@ -269,6 +271,7 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
           <EntitySetMapping Name="books">
             <EntityTypeMapping TypeName="LibModel.book">
               <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
                 <ScalarProperty Name="SeriesID" ColumnName="SeriesID" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\BookMark\Newsoft-SQL Version\NewSoft_Entity\NewSoft\DALLayer\LibDB.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\Users\karthikst\source\repos\Bookmark\NewSoft\DALLayer\LibDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

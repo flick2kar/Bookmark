@@ -28,6 +28,7 @@
     <EntitySetMapping Name="books">
       <EntityTypeMapping TypeName="LibModel.book">
         <MappingFragment StoreEntitySet="books">
+          <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
           <ScalarProperty Name="SeriesID" ColumnName="SeriesID" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
