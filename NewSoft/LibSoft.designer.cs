@@ -28,8 +28,8 @@
         /// </summary>
         protected void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pageMember = new System.Windows.Forms.TabPage();
             this.btnMemAll = new System.Windows.Forms.Button();
             this.btnMemSearch = new System.Windows.Forms.Button();
@@ -118,6 +118,12 @@
             this.btnShowWishList = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lstAvaStatus = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblSalepricedisplay = new System.Windows.Forms.Label();
+            this.lblSalePrice = new System.Windows.Forms.Label();
+            this.txtSoldprice = new System.Windows.Forms.TextBox();
+            this.lblSoldfor = new System.Windows.Forms.Label();
             this.lblBookLendTo = new System.Windows.Forms.Label();
             this.btnSeriesDel = new System.Windows.Forms.Button();
             this.btnSeriesAdd = new System.Windows.Forms.Button();
@@ -168,6 +174,8 @@
             this.lblAmtTrans = new System.Windows.Forms.Label();
             this.lblAccTrans = new System.Windows.Forms.Label();
             this.dateAcc = new System.Windows.Forms.DateTimePicker();
+            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.lblISBN = new System.Windows.Forms.Label();
             this.pageMember.SuspendLayout();
             this.memLayout.SuspendLayout();
             this.memPanel.SuspendLayout();
@@ -1125,8 +1133,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 58);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.75546F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.24454F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.56272F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.43727F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(753, 559);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
@@ -1134,6 +1142,14 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblISBN);
+            this.panel1.Controls.Add(this.txtISBN);
+            this.panel1.Controls.Add(this.lstAvaStatus);
+            this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.Controls.Add(this.lblSalepricedisplay);
+            this.panel1.Controls.Add(this.lblSalePrice);
+            this.panel1.Controls.Add(this.txtSoldprice);
+            this.panel1.Controls.Add(this.lblSoldfor);
             this.panel1.Controls.Add(this.lblBookLendTo);
             this.panel1.Controls.Add(this.btnSeriesDel);
             this.panel1.Controls.Add(this.btnSeriesAdd);
@@ -1162,8 +1178,69 @@
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Location = new System.Drawing.Point(397, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 348);
+            this.panel1.Size = new System.Drawing.Size(352, 369);
             this.panel1.TabIndex = 2;
+            // 
+            // lstAvaStatus
+            // 
+            this.lstAvaStatus.FormattingEnabled = true;
+            this.lstAvaStatus.Items.AddRange(new object[] {
+            "InActive",
+            "Active",
+            "Lost",
+            "Sold",
+            "Sales",
+            "AMZ"});
+            this.lstAvaStatus.Location = new System.Drawing.Point(202, 331);
+            this.lstAvaStatus.Name = "lstAvaStatus";
+            this.lstAvaStatus.Size = new System.Drawing.Size(90, 21);
+            this.lstAvaStatus.TabIndex = 44;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(153, 329);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblStatus.TabIndex = 43;
+            this.lblStatus.Text = "Status";
+            // 
+            // lblSalepricedisplay
+            // 
+            this.lblSalepricedisplay.AutoSize = true;
+            this.lblSalepricedisplay.Location = new System.Drawing.Point(79, 334);
+            this.lblSalepricedisplay.Name = "lblSalepricedisplay";
+            this.lblSalepricedisplay.Size = new System.Drawing.Size(13, 13);
+            this.lblSalepricedisplay.TabIndex = 42;
+            this.lblSalepricedisplay.Text = "0";
+            // 
+            // lblSalePrice
+            // 
+            this.lblSalePrice.AutoSize = true;
+            this.lblSalePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblSalePrice.Location = new System.Drawing.Point(7, 334);
+            this.lblSalePrice.Name = "lblSalePrice";
+            this.lblSalePrice.Size = new System.Drawing.Size(58, 26);
+            this.lblSalePrice.TabIndex = 41;
+            this.lblSalePrice.Text = "Sale Price \r\n(Min,Max)";
+            // 
+            // txtSoldprice
+            // 
+            this.txtSoldprice.Location = new System.Drawing.Point(299, 296);
+            this.txtSoldprice.Name = "txtSoldprice";
+            this.txtSoldprice.Size = new System.Drawing.Size(48, 20);
+            this.txtSoldprice.TabIndex = 40;
+            this.txtSoldprice.Text = "0";
+            // 
+            // lblSoldfor
+            // 
+            this.lblSoldfor.AutoSize = true;
+            this.lblSoldfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoldfor.Location = new System.Drawing.Point(251, 298);
+            this.lblSoldfor.Name = "lblSoldfor";
+            this.lblSoldfor.Size = new System.Drawing.Size(43, 13);
+            this.lblSoldfor.TabIndex = 39;
+            this.lblSoldfor.Text = "Sold for";
             // 
             // lblBookLendTo
             // 
@@ -1266,7 +1343,8 @@
             // lblLendRate
             // 
             this.lblLendRate.AutoSize = true;
-            this.lblLendRate.Location = new System.Drawing.Point(169, 277);
+            this.lblLendRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblLendRate.Location = new System.Drawing.Point(134, 297);
             this.lblLendRate.Name = "lblLendRate";
             this.lblLendRate.Size = new System.Drawing.Size(54, 13);
             this.lblLendRate.TabIndex = 16;
@@ -1276,7 +1354,8 @@
             // lblBkPrice
             // 
             this.lblBkPrice.AutoSize = true;
-            this.lblBkPrice.Location = new System.Drawing.Point(15, 280);
+            this.lblBkPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblBkPrice.Location = new System.Drawing.Point(5, 297);
             this.lblBkPrice.Name = "lblBkPrice";
             this.lblBkPrice.Size = new System.Drawing.Size(59, 13);
             this.lblBkPrice.TabIndex = 15;
@@ -1362,7 +1441,7 @@
             // 
             // txtOrgprice
             // 
-            this.txtOrgprice.Location = new System.Drawing.Point(245, 275);
+            this.txtOrgprice.Location = new System.Drawing.Point(205, 295);
             this.txtOrgprice.Name = "txtOrgprice";
             this.txtOrgprice.Size = new System.Drawing.Size(46, 20);
             this.txtOrgprice.TabIndex = 8;
@@ -1370,7 +1449,7 @@
             // 
             // txtBookPrice
             // 
-            this.txtBookPrice.Location = new System.Drawing.Point(92, 275);
+            this.txtBookPrice.Location = new System.Drawing.Point(80, 295);
             this.txtBookPrice.Name = "txtBookPrice";
             this.txtBookPrice.Size = new System.Drawing.Size(54, 20);
             this.txtBookPrice.TabIndex = 7;
@@ -1427,19 +1506,19 @@
             this.gridBooks.AllowUserToAddRows = false;
             this.gridBooks.AllowUserToDeleteRows = false;
             this.gridBooks.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridBooks.Location = new System.Drawing.Point(0, 3);
             this.gridBooks.Name = "gridBooks";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridBooks.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridBooks.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridBooks.RowTemplate.Height = 24;
             this.gridBooks.Size = new System.Drawing.Size(386, 414);
             this.gridBooks.TabIndex = 1;
@@ -1454,15 +1533,15 @@
             this.panel5.Controls.Add(this.btnUpdateWishList);
             this.panel5.Controls.Add(this.txtMembers);
             this.panel5.Controls.Add(this.btnAddtoWishList);
-            this.panel5.Location = new System.Drawing.Point(397, 359);
+            this.panel5.Location = new System.Drawing.Point(397, 380);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(352, 75);
+            this.panel5.Size = new System.Drawing.Size(352, 82);
             this.panel5.TabIndex = 6;
             // 
             // chkBookGiven
             // 
             this.chkBookGiven.AutoSize = true;
-            this.chkBookGiven.Location = new System.Drawing.Point(156, 56);
+            this.chkBookGiven.Location = new System.Drawing.Point(156, 54);
             this.chkBookGiven.Name = "chkBookGiven";
             this.chkBookGiven.Size = new System.Drawing.Size(88, 17);
             this.chkBookGiven.TabIndex = 23;
@@ -1473,7 +1552,7 @@
             // 
             this.dateGrantBook.Checked = false;
             this.dateGrantBook.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateGrantBook.Location = new System.Drawing.Point(12, 52);
+            this.dateGrantBook.Location = new System.Drawing.Point(12, 50);
             this.dateGrantBook.Name = "dateGrantBook";
             this.dateGrantBook.ShowCheckBox = true;
             this.dateGrantBook.Size = new System.Drawing.Size(123, 20);
@@ -1481,7 +1560,7 @@
             // 
             // btnUpdateWishList
             // 
-            this.btnUpdateWishList.Location = new System.Drawing.Point(173, 16);
+            this.btnUpdateWishList.Location = new System.Drawing.Point(173, 7);
             this.btnUpdateWishList.Name = "btnUpdateWishList";
             this.btnUpdateWishList.Size = new System.Drawing.Size(38, 30);
             this.btnUpdateWishList.TabIndex = 19;
@@ -1491,7 +1570,7 @@
             // 
             // txtMembers
             // 
-            this.txtMembers.Location = new System.Drawing.Point(14, 24);
+            this.txtMembers.Location = new System.Drawing.Point(14, 15);
             this.txtMembers.Margin = new System.Windows.Forms.Padding(2);
             this.txtMembers.Name = "txtMembers";
             this.txtMembers.Size = new System.Drawing.Size(102, 20);
@@ -1500,7 +1579,7 @@
             // 
             // btnAddtoWishList
             // 
-            this.btnAddtoWishList.Location = new System.Drawing.Point(130, 17);
+            this.btnAddtoWishList.Location = new System.Drawing.Point(130, 8);
             this.btnAddtoWishList.Name = "btnAddtoWishList";
             this.btnAddtoWishList.Size = new System.Drawing.Size(38, 30);
             this.btnAddtoWishList.TabIndex = 2;
@@ -1679,6 +1758,22 @@
             this.dateAcc.Name = "dateAcc";
             this.dateAcc.Size = new System.Drawing.Size(111, 20);
             this.dateAcc.TabIndex = 0;
+            // 
+            // txtISBN
+            // 
+            this.txtISBN.Location = new System.Drawing.Point(94, 252);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(157, 20);
+            this.txtISBN.TabIndex = 45;
+            // 
+            // lblISBN
+            // 
+            this.lblISBN.AutoSize = true;
+            this.lblISBN.Location = new System.Drawing.Point(27, 259);
+            this.lblISBN.Name = "lblISBN";
+            this.lblISBN.Size = new System.Drawing.Size(32, 13);
+            this.lblISBN.TabIndex = 46;
+            this.lblISBN.Text = "ISBN";
             // 
             // frmLibSoft
             // 
@@ -1882,7 +1977,14 @@
         private System.Windows.Forms.Label lblAccMemBalValue;
         private System.Windows.Forms.Button btnGrantList;
         private System.Windows.Forms.Label lblMemberNotes;
-
+        private System.Windows.Forms.ComboBox lstAvaStatus;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblSalepricedisplay;
+        private System.Windows.Forms.Label lblSalePrice;
+        private System.Windows.Forms.TextBox txtSoldprice;
+        private System.Windows.Forms.Label lblSoldfor;
+        private System.Windows.Forms.Label lblISBN;
+        private System.Windows.Forms.TextBox txtISBN;
     }
 }
 

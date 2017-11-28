@@ -25,22 +25,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="books">
-      <EntityTypeMapping TypeName="LibModel.book">
-        <MappingFragment StoreEntitySet="books">
-          <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
-          <ScalarProperty Name="SeriesID" ColumnName="SeriesID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
-          <ScalarProperty Name="BookPrice" ColumnName="BookPrice" />
-          <ScalarProperty Name="LendRate" ColumnName="LendRate" />
-          <ScalarProperty Name="BookName" ColumnName="BookName" />
-          <ScalarProperty Name="BookID" ColumnName="BookID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SubCategories">
       <EntityTypeMapping TypeName="LibModel.SubCategory">
         <MappingFragment StoreEntitySet="SubCategory">
@@ -107,6 +91,24 @@
           <ScalarProperty Name="BookID" ColumnName="BookID" />
           <ScalarProperty Name="MemberID" ColumnName="MemberID" />
           <ScalarProperty Name="WishID" ColumnName="WishID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="books">
+      <EntityTypeMapping TypeName="LibModel.book">
+        <MappingFragment StoreEntitySet="books">
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
+          <ScalarProperty Name="SeriesID" ColumnName="SeriesID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="BookPrice" ColumnName="BookPrice" />
+          <ScalarProperty Name="Soldprice" ColumnName="Soldprice" />
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

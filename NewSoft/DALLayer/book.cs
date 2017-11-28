@@ -16,7 +16,7 @@ namespace DALLayer
     {
         public string BookID { get; set; }
         public string BookName { get; set; }
-        public Nullable<int> LendRate { get; set; }
+        public Nullable<int> Soldprice { get; set; }
         public Nullable<int> BookPrice { get; set; }
         public Nullable<int> AuthorID { get; set; }
         public Nullable<int> CategoryID { get; set; }
@@ -24,5 +24,7 @@ namespace DALLayer
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> SeriesID { get; set; }
         public Nullable<int> OrgPrice { get; set; }
+        public Nullable<int> Status { get; set; }
+        public string ISBN { get; set; }
     }
 }

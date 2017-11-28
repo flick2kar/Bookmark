@@ -4,12 +4,12 @@
     <EntitySet Name="BookPurchases" EntityType="LibModel.BookPurchase" />
     <EntitySet Name="Series" EntityType="LibModel.Series" />
     <EntitySet Name="authors" EntityType="LibModel.author" />
-    <EntitySet Name="books" EntityType="LibModel.book" />
     <EntitySet Name="SubCategories" EntityType="LibModel.SubCategory" />
     <EntitySet Name="categories" EntityType="LibModel.category" />
     <EntitySet Name="booktrans" EntityType="LibModel.booktran" />
     <EntitySet Name="members" EntityType="LibModel.member" />
     <EntitySet Name="WishLists" EntityType="LibModel.WishList" />
+    <EntitySet Name="books" EntityType="LibModel.book" />
   </EntityContainer>
   <EntityType Name="BookPurchase">
     <Key>
@@ -31,21 +31,6 @@
     </Key>
     <Property Name="AuthorID" Type="Int32" Nullable="false" />
     <Property Name="AuthorName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="book">
-    <Key>
-      <PropertyRef Name="BookID" />
-    </Key>
-    <Property Name="BookID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="BookName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="LendRate" Type="Int32" />
-    <Property Name="BookPrice" Type="Int32" />
-    <Property Name="AuthorID" Type="Int32" />
-    <Property Name="CategoryID" Type="Int32" />
-    <Property Name="SubCategoryID" Type="Int32" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="SeriesID" Type="Int32" />
-    <Property Name="OrgPrice" Type="Int32" />
   </EntityType>
   <EntityType Name="SubCategory">
     <Key>
@@ -110,5 +95,22 @@
     <Property Name="Status" Type="Boolean" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="GrantDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BookName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Soldprice" Type="Int32" />
+    <Property Name="BookPrice" Type="Int32" />
+    <Property Name="AuthorID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="SeriesID" Type="Int32" />
+    <Property Name="OrgPrice" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ISBN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

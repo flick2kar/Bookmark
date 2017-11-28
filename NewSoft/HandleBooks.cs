@@ -76,6 +76,7 @@ namespace NewSoft
                 lstAuthor.SelectedIndex = 0;
                 lstCategory.SelectedIndex = 0;
                 lstSeries.SelectedIndex = 0;
+                lstAvaStatus.SelectedIndex = 1;
                 txtMembers.Text = "";
                 //lstAlphas.SelectedIndex = 0;
                 txtBookId.Text = bookID;
@@ -93,8 +94,13 @@ namespace NewSoft
                 txtOrgprice.Text = ds.Rows[0]["OrgPrice"].ToString();
                 CommonUIMethods.setLstValue(lstCategory, ds.Rows[0]["CategoryName"].ToString());
                 CommonUIMethods.setLstValue(lstSubcat, ds.Rows[0]["Name"].ToString());
-                CommonUIMethods.setLstValue(lstSeries, ds.Rows[0]["SeriesName"].ToString());               
-                
+                CommonUIMethods.setLstValue(lstSeries, ds.Rows[0]["SeriesName"].ToString());
+                txtISBN.Text = ds.Rows[0]["ISBN"].ToString();
+                txtSoldprice.Text = ds.Rows[0]["Soldprice"].ToString();
+                //ds = bookRep.GetSalePrice(tempBookid);
+                lblSalepricedisplay.Text = bookRep.GetSalePrice(tempBookid);
+                lstAvaStatus.SelectedIndex = bookRep.GetBookstatus(tempBookid);
+
                 autoAuthors.Clear();
                 autoSubCategory.Clear();
                 autoSeries.Clear();
@@ -175,10 +181,13 @@ namespace NewSoft
                 objBook.BookPrice = Int32.Parse(txtBookPrice.Text);
                 objBook.CategoryID = Int32.Parse(lstCategory.SelectedValue.ToString());
                 objBook.CreatedDate = DateTime.Now;
-                objBook.LendRate = 0;
+                objBook.Soldprice = 0;
                 objBook.OrgPrice= Int32.Parse(txtOrgprice.Text);
                 objBook.SeriesID = Int32.Parse(lstSeries.SelectedValue.ToString());
                 objBook.SubCategoryID = Int32.Parse(lstSubcat.SelectedValue.ToString());
+                objBook.Status = lstAvaStatus.SelectedIndex;
+                objBook.Soldprice = Int32.Parse(txtSoldprice.Text);
+                objBook.ISBN = txtISBN.Text;
                 bookRep.InsertBooks(objBook);
                 gridBooks.DataSource = bookRep.GetBookDetails();            
             }
@@ -210,11 +219,13 @@ namespace NewSoft
                     objBook.CreatedDate = DateTime.Parse(createdDate);
                 else
                     objBook.CreatedDate = DateTime.Now;
-                objBook.LendRate = 0;
+                objBook.Soldprice = Int32.Parse(txtSoldprice.Text); ;
                 objBook.OrgPrice = Int32.Parse(txtOrgprice.Text);
                 objBook.SeriesID = Int32.Parse(lstSeries.SelectedValue.ToString());
                 objBook.SubCategoryID = Int32.Parse(lstSubcat.SelectedValue.ToString());;
                 lstAuthor.SelectedText = lstAuthor.Text;
+                objBook.Status = lstAvaStatus.SelectedIndex;
+                objBook.ISBN = txtISBN.Text;
                 bookRep.UpdateBooks(objBook, txtBookId.Text);
                 gridBooks.DataSource = bookRep.GetBookDetails();            
             }
@@ -402,7 +413,7 @@ namespace NewSoft
         private void lstAlphas_SelectedIndexChanged(object sender, EventArgs e)
         {
             gridBooks.DataSource = bookRep.GetBookDetails(lstAlphas.SelectedItem.ToString());
-            //String strQuery = "select BookID,BookName,Authorname,BookPrice,LendRate,CategoryName,SubCategory.Name from ((books left join authors on books.authorid=authors.authorid) inner join category on category.CategoryID=books.CategoryID) Left join Subcategory on Subcategory.ID=books.SubCategoryID where bookid like '" + lstAlphas.SelectedItem + "%' order by bookid asc";
+            //String strQuery = "select BookID,BookName,Authorname,BookPrice,Soldprice,CategoryName,SubCategory.Name from ((books left join authors on books.authorid=authors.authorid) inner join category on category.CategoryID=books.CategoryID) Left join Subcategory on Subcategory.ID=books.SubCategoryID where bookid like '" + lstAlphas.SelectedItem + "%' order by bookid asc";
 
             //DataSet ds = new DataSet();
             //ds = returnDS(strQuery, "books");

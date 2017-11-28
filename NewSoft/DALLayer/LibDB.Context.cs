@@ -28,11 +28,11 @@ namespace DALLayer
         public DbSet<BookPurchase> BookPurchases { get; set; }
         public DbSet<Series> Series { get; set; }
         public DbSet<author> authors { get; set; }
-        public DbSet<book> books { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<category> categories { get; set; }
         public DbSet<booktran> booktrans { get; set; }
         public DbSet<member> members { get; set; }
         public DbSet<WishList> WishLists { get; set; }
+        public DbSet<book> books { get; set; }
     }
 }

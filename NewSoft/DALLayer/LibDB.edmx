@@ -27,7 +27,7 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
           </Key>
           <Property Name="BookID" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="BookName" Type="nvarchar" MaxLength="255" />
-          <Property Name="LendRate" Type="int" />
+          <Property Name="Soldprice" Type="int" />
           <Property Name="BookPrice" Type="int" />
           <Property Name="AuthorID" Type="int" />
           <Property Name="CategoryID" Type="int" />
@@ -35,6 +35,8 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="SeriesID" Type="int" />
           <Property Name="OrgPrice" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ISBN" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="booktrans">
           <Key>
@@ -131,12 +133,12 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
           <EntitySet Name="BookPurchases" EntityType="LibModel.BookPurchase" />
           <EntitySet Name="Series" EntityType="LibModel.Series" />
           <EntitySet Name="authors" EntityType="LibModel.author" />
-          <EntitySet Name="books" EntityType="LibModel.book" />
           <EntitySet Name="SubCategories" EntityType="LibModel.SubCategory" />
           <EntitySet Name="categories" EntityType="LibModel.category" />
           <EntitySet Name="booktrans" EntityType="LibModel.booktran" />
           <EntitySet Name="members" EntityType="LibModel.member" />
           <EntitySet Name="WishLists" EntityType="LibModel.WishList" />
+          <EntitySet Name="books" EntityType="LibModel.book" />
         </EntityContainer>
         <EntityType Name="BookPurchase">
           <Key>
@@ -158,21 +160,6 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
           </Key>
           <Property Name="AuthorID" Type="Int32" Nullable="false" />
           <Property Name="AuthorName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="book">
-          <Key>
-            <PropertyRef Name="BookID" />
-          </Key>
-          <Property Name="BookID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="BookName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="LendRate" Type="Int32" />
-          <Property Name="BookPrice" Type="Int32" />
-          <Property Name="AuthorID" Type="Int32" />
-          <Property Name="CategoryID" Type="Int32" />
-          <Property Name="SubCategoryID" Type="Int32" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="SeriesID" Type="Int32" />
-          <Property Name="OrgPrice" Type="Int32" />
         </EntityType>
         <EntityType Name="SubCategory">
           <Key>
@@ -238,6 +225,23 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="GrantDate" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="book">
+          <Key>
+            <PropertyRef Name="BookID" />
+          </Key>
+          <Property Name="BookID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BookName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Soldprice" Type="Int32" />
+          <Property Name="BookPrice" Type="Int32" />
+          <Property Name="AuthorID" Type="Int32" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="SubCategoryID" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="SeriesID" Type="Int32" />
+          <Property Name="OrgPrice" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ISBN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -265,22 +269,6 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
               <MappingFragment StoreEntitySet="authors">
                 <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
                 <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="books">
-            <EntityTypeMapping TypeName="LibModel.book">
-              <MappingFragment StoreEntitySet="books">
-                <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
-                <ScalarProperty Name="SeriesID" ColumnName="SeriesID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
-                <ScalarProperty Name="BookPrice" ColumnName="BookPrice" />
-                <ScalarProperty Name="LendRate" ColumnName="LendRate" />
-                <ScalarProperty Name="BookName" ColumnName="BookName" />
-                <ScalarProperty Name="BookID" ColumnName="BookID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -350,6 +338,24 @@ FROM [dbo].[BookPurchase] AS [BookPurchase]</DefiningQuery>
                 <ScalarProperty Name="BookID" ColumnName="BookID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="WishID" ColumnName="WishID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books">
+            <EntityTypeMapping TypeName="LibModel.book">
+              <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
+                <ScalarProperty Name="SeriesID" ColumnName="SeriesID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="BookPrice" ColumnName="BookPrice" />
+                <ScalarProperty Name="Soldprice" ColumnName="Soldprice" />
+                <ScalarProperty Name="BookName" ColumnName="BookName" />
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

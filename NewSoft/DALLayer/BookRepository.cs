@@ -16,7 +16,7 @@ namespace DALLayer
             DataTable ds=new DataTable();
             using(DBManager dbMgr=new DBManager(DataProvider.SqlClient,DBConnection.Connstring))
             {
-                String strQuery = "select books.BookID,BookName,authors.Authorname,BookPrice,OrgPrice,category.CategoryName,SubCategory.Name from (((books inner join (select BookID as bookid from books where BookID like '%" + strBookSearch + "%' union select BookID as bookid from books where BookName like '%" + strBookSearch + "%' union select BookID as bookid from books inner join authors on authors.authorid=books.authorid where authors.authorname like '%" + strBookSearch + "%') as temp on books.bookid =  temp.bookid) inner join category on category.categoryid=books.categoryid) left join authors on authors.authorid=books.authorid) Left join Subcategory on Subcategory.ID=books.SubCategoryID order by books.BookID";
+                String strQuery = "select books.BookID,BookName,authors.Authorname,BookPrice,OrgPrice,Soldprice,category.CategoryName,SubCategory.Name from (((books inner join (select BookID as bookid from books where BookID like '%" + strBookSearch + "%' union select BookID as bookid from books where BookName like '%" + strBookSearch + "%' union select BookID as bookid from books inner join authors on authors.authorid=books.authorid where authors.authorname like '%" + strBookSearch + "%') as temp on books.bookid =  temp.bookid) inner join category on category.categoryid=books.categoryid) left join authors on authors.authorid=books.authorid) Left join Subcategory on Subcategory.ID=books.SubCategoryID order by books.BookID";
                 ds = dbMgr.ExecuteDataTable(CommandType.Text, strQuery);
             }
             return ds;
@@ -27,7 +27,7 @@ namespace DALLayer
             DataSet ds = new DataSet();
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
-                String strQuery = "select BookID,BookName,Authorname,OrgPrice,LendRate,CategoryName,Name from ((books left join authors on books.authorid=authors.authorid) inner join category on category.CategoryID=books.CategoryID) Left join Subcategory on Subcategory.ID=books.SubCategoryID where bookid like '"+bookAlpha+"%' order by bookid;";
+                String strQuery = "select BookID,BookName,Authorname,OrgPrice,Soldprice,CategoryName,Name from ((books left join authors on books.authorid=authors.authorid) inner join category on category.CategoryID=books.CategoryID) Left join Subcategory on Subcategory.ID=books.SubCategoryID where bookid like '"+bookAlpha+"%' order by bookid;";
                 ds = dbMgr.ExecuteDataSet(CommandType.Text, strQuery);
             }
             return ds.Tables[0];
@@ -38,7 +38,7 @@ namespace DALLayer
             DataSet ds = new DataSet();
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
-                String strQuery = "select books.BookID,BookName,authors.Authorname,BookPrice,OrgPrice,category.CategoryName,SubCategory.Name,Series.SeriesName,books.CreatedDate from (((books inner join category on category.categoryid=books.categoryid) left join authors on authors.authorid=books.authorid) Left join Subcategory on Subcategory.ID=books.SubCategoryID)Left join Series on Series.SeriesID=books.SeriesID where BookID='" + bookId + "'";
+                String strQuery = "select books.BookID,BookName,authors.Authorname,BookPrice,OrgPrice,Soldprice,category.CategoryName,ISBN,SubCategory.Name,Series.SeriesName,books.CreatedDate from (((books inner join category on category.categoryid=books.categoryid) left join authors on authors.authorid=books.authorid) Left join Subcategory on Subcategory.ID=books.SubCategoryID)Left join Series on Series.SeriesID=books.SeriesID where BookID='" + bookId + "'";
                 ds = dbMgr.ExecuteDataSet(CommandType.Text, strQuery);
             }
             return ds.Tables[0];
@@ -131,6 +131,29 @@ namespace DALLayer
             return ds;
         }
 
+        public String GetSalePrice(string bookID)
+        {
+            DataTable ds = new DataTable();
+            String saleprice = "";
+            using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
+            {                
+                dbMgr.AddParameters("@bookid", bookID);
+                //dbMgr.ExecuteScalar
+                saleprice = dbMgr.ExecuteScalar(CommandType.StoredProcedure, "GetSalesPrice").ToString();
+            }
+            return saleprice;
+        }
+
+        public int GetBookstatus(string bookID)
+        {
+            int status = 1;
+            using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
+            {
+                String strQuery = "select status from books where bookid='" + bookID +"'";
+                status = Int32.Parse(dbMgr.ExecuteScalar(CommandType.Text, strQuery).ToString());
+            }
+            return status;
+        }
 
         public void InsertBooks(Entities.book bkObj)
         {

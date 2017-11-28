@@ -22,7 +22,7 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
     </Key>
     <Property Name="BookID" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="BookName" Type="nvarchar" MaxLength="255" />
-    <Property Name="LendRate" Type="int" />
+    <Property Name="Soldprice" Type="int" />
     <Property Name="BookPrice" Type="int" />
     <Property Name="AuthorID" Type="int" />
     <Property Name="CategoryID" Type="int" />
@@ -30,6 +30,8 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="SeriesID" Type="int" />
     <Property Name="OrgPrice" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ISBN" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="booktrans">
     <Key>
