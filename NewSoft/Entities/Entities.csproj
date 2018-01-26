@@ -50,6 +50,9 @@
     <Compile Include="author.cs">
       <DependentUpon>LibEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="balance.cs">
+      <DependentUpon>LibEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="book.cs">
       <DependentUpon>LibEntity.tt</DependentUpon>
     </Compile>
@@ -60,6 +63,9 @@
       <DependentUpon>LibEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="category.cs">
+      <DependentUpon>LibEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fine.cs">
       <DependentUpon>LibEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="LibEntity.Context.cs">

@@ -112,5 +112,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="balances">
+      <EntityTypeMapping TypeName="LibModel.balance">
+        <MappingFragment StoreEntitySet="balance">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="BalDate" ColumnName="BalDate" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="BalanceID" ColumnName="BalanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fines">
+      <EntityTypeMapping TypeName="LibModel.Fine">
+        <MappingFragment StoreEntitySet="Fine">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="FineDate" ColumnName="FineDate" />
+          <ScalarProperty Name="FineAmt" ColumnName="FineAmt" />
+          <ScalarProperty Name="FineID" ColumnName="FineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

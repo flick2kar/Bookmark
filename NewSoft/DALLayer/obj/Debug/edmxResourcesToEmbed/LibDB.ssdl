@@ -7,6 +7,16 @@
     <Property Name="AuthorID" Type="int" Nullable="false" />
     <Property Name="AuthorName" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="balance">
+    <Key>
+      <PropertyRef Name="BalanceID" />
+    </Key>
+    <Property Name="BalanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Balance" Type="int" Nullable="false" />
+    <Property Name="BalDate" Type="date" />
+    <Property Name="MemberID" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="BookPurchase">
@@ -58,6 +68,16 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
     <Property Name="CategoryID" Type="int" Nullable="false" />
     <Property Name="CategoryName" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="Fine">
+    <Key>
+      <PropertyRef Name="FineID" />
+    </Key>
+    <Property Name="FineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FineAmt" Type="int" Nullable="false" />
+    <Property Name="FineDate" Type="date" />
+    <Property Name="MemberID" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="members">
     <Key>
       <PropertyRef Name="MemberID" />
@@ -106,9 +126,11 @@ warning 6002: The table/view 'Bookmark_New.dbo.BookPurchase' does not have a pri
   </EntityType>
   <EntityContainer Name="LibModelStoreContainer">
     <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="balance" EntityType="Self.balance" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="booktrans" EntityType="Self.booktrans" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fine" EntityType="Self.Fine" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Series" EntityType="Self.Series" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />

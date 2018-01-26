@@ -12,14 +12,12 @@ namespace Entities
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using Utils;
     
     public partial class LibEntities : DbContext
     {
         public LibEntities()
             : base("name=LibEntities")
         {
-            this.Database.Connection.ConnectionString= AppConfigSetting.GetDBConnection;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -30,11 +28,13 @@ namespace Entities
         public DbSet<BookPurchase> BookPurchases { get; set; }
         public DbSet<Series> Series { get; set; }
         public DbSet<author> authors { get; set; }
-        public DbSet<book> books { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<category> categories { get; set; }
         public DbSet<booktran> booktrans { get; set; }
         public DbSet<member> members { get; set; }
         public DbSet<WishList> WishLists { get; set; }
+        public DbSet<book> books { get; set; }
+        public DbSet<balance> balances { get; set; }
+        public DbSet<Fine> Fines { get; set; }
     }
 }

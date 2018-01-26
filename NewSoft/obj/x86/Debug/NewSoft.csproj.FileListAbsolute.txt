@@ -1,3 +1,9 @@
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.csprojResolveAssemblyReference.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.AddBalance.resources
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.frmLibSoft.resources
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.Properties.Resources.resources
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.csproj.GenerateResource.Cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.csproj.CoreCompileInputs.cache
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\NewSoft.exe.config
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\NewSoft.exe
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\NewSoft.pdb
@@ -11,10 +17,10 @@ E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\Entities.pdb
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\Entities.dll.config
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\Utils.pdb
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\EntityFramework.xml
-E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.csprojResolveAssemblyReference.cache
-E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.frmLibSoft.resources
-E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.Properties.Resources.resources
-E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.csproj.GenerateResource.Cache
-E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.csproj.CoreCompileInputs.cache
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.exe
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.AddFine.resources
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\NewSoft.exe.manifest
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\bin\Debug\NewSoft.application
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.exe.manifest
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\obj\x86\Debug\NewSoft.application

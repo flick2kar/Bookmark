@@ -66,13 +66,18 @@ namespace DALLayer
             return ds;
         }
 
-        public DataTable GetMemberNotes(string memberID)
+        public string GetMemberNotes(string memberID="")
         {
-            DataTable ds = new DataTable();
+            string ds = "";
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
                 String strQuery = "select Notes from members where memberid='" + memberID+"'";
-                ds = dbMgr.ExecuteDataTable(CommandType.Text, strQuery);
+                
+                object objResult = dbMgr.ExecuteScalar(CommandType.Text, strQuery);
+                if (objResult != null && DBNull.Value != objResult)
+                {
+                    ds = objResult.ToString();
+                }
             }
             return ds;
         }

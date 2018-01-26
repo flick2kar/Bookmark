@@ -16,7 +16,7 @@ namespace NewSoft
             gridTrans.DataSource = transRep.GetTransDetails();
         }
 
-        public void initializeTransData(int transID)
+        public void initializeTransData(int transID, int rowIndex)
         {
             if (gridTrans.Rows.Count > 0)
             {  
@@ -26,7 +26,7 @@ namespace NewSoft
                     ds = CommonUIMethods.ConvertGridToTable(gridTrans);
                 else
                     ds = transRep.GetTransIDDetails(transID);
-                lblMemberNotes.Text = memRep.GetMemberNotes(ds.Rows[0]["MemberID"].ToString()).Rows[0]["Notes"].ToString();
+                lblMemberNotes.Text = memRep.GetMemberNotes(ds.Rows[0]["MemberID"].ToString());
                 lblAlreadyRead.Text = "";
                 txtTransBookid.Text = ds.Rows[0]["BookID"].ToString();
                 txtTransMemId.Text = ds.Rows[0]["MemberID"].ToString();                
@@ -39,9 +39,13 @@ namespace NewSoft
                 else
                     dateTransReturn.Text = ds.Rows[0]["ReturnDate"].ToString();
                 txtTransLendRate.Text = ds.Rows[0]["LendRate"].ToString();
-                txtTransFine.Text = ds.Rows[0]["Fine"].ToString();
-                txtLibBal.Text = ds.Rows[0]["LibBal"].ToString();
-                txtMemBal.Text = ds.Rows[0]["MemBal"].ToString();
+
+                //logic to calculate and update fine
+                //if(rowIndex<0)
+                //    txtTransFine.Text = ds.Rows[0]["Fine"].ToString();
+                //else
+                //    txtTransFine.Text = gridTrans["Fine", rowIndex].Value.ToString();
+                
                 txtRenewal.Text = ds.Rows[0]["RenewalDays"].ToString();                
                 CommonUIMethods.setBookLabel(lblBookLabel,txtTransBookid.Text);
                 if (wishRep.SearchWishList(txtTransMemId.Text).Rows.Count > 0)
@@ -61,7 +65,7 @@ namespace NewSoft
         {
             if (e.RowIndex != -1)
             {
-                initializeTransData(Int32.Parse(gridTrans["TransID", e.RowIndex].Value.ToString()));
+                initializeTransData(Int32.Parse(gridTrans["TransID", e.RowIndex].Value.ToString()),e.RowIndex);
             }
         }
 
@@ -95,12 +99,12 @@ namespace NewSoft
         {
             DataTable dsTemp = new DataTable();
             dsTemp = (DataTable)gridTrans.DataSource;                
-            if (!(dsTemp.Columns.Contains("Fine")))
+            if (!(dsTemp.Columns.Contains("Lendrate")))
             {
                 dsTemp.Columns.Add("Lendrate");
-                dsTemp.Columns.Add("Fine");
-                dsTemp.Columns.Add("LibBal");
-                dsTemp.Columns.Add("MemBal");
+                //dsTemp.Columns.Add("Fine");
+                //dsTemp.Columns.Add("LibBal");
+                //dsTemp.Columns.Add("MemBal");
                 // dsTemp.Tables[0].Columns.Add("TransId");
                 dsTemp.Columns.Add("RenewalDays");
             }
@@ -116,9 +120,11 @@ namespace NewSoft
 
 
             rw["LendRate"] = txtTransLendRate.Text;
-            rw["Fine"] = txtTransFine.Text;
-            rw["LibBal"] = txtLibBal.Text;
-            rw["MemBal"] = txtMemBal.Text;
+            //rw["Fine"] = txtTransFine.Text;
+            //rw["LibBal"] = txtLibBal.Text;
+            //rw["MemBal"] = txtMemBal.Text;
+            //rw["LibBal"] = 0;
+            //rw["MemBal"] = 0;
             rw["TransId"] = 0;
             rw["RenewalDays"] = txtRenewal.Text;
             dsTemp.Rows.Add(rw);
@@ -193,17 +199,20 @@ namespace NewSoft
                         }
 
                         bt.LendRate = Int32.Parse(gridTrans["LendRate", i].Value.ToString());
-                        bt.Fine = Int32.Parse(gridTrans["Fine", i].Value.ToString());
-                        bt.LibBal = Int32.Parse(gridTrans["LibBal", i].Value.ToString());
-                        bt.MemBal = Int32.Parse(gridTrans["MemBal", i].Value.ToString());
+                        //bt.Fine = Int32.Parse(gridTrans["Fine", i].Value.ToString());
+                        bt.Fine = 0;
+                        //bt.LibBal = Int32.Parse(gridTrans["LibBal", i].Value.ToString());
+                        //bt.MemBal = Int32.Parse(gridTrans["MemBal", i].Value.ToString());
+                        bt.LibBal = 0;
+                        bt.MemBal = 0;
                         bt.RenewalDays = Int32.Parse(gridTrans["RenewalDays", i].Value.ToString());
 
-                        if (!bt.Fine.Equals(""))
-                            strFine = bt.Fine + strFine;
+                        //if (!bt.Fine.Equals(""))
+                        //    strFine = bt.Fine + strFine;
                         if (!bt.LendRate.Equals(""))
                             strLendRate = bt.LendRate + strLendRate;
-                        if (!bt.MemBal.Equals(""))
-                            strBalance = bt.MemBal + strBalance;
+                        //if (!bt.MemBal.Equals(""))
+                        //    strBalance = bt.MemBal + strBalance;
 
                         arBookid.Append(bt.BookID + ",");
                         //updateLoanReturn(bt, false, false);
@@ -213,7 +222,7 @@ namespace NewSoft
                 if (isMulLoan)
                 {
                     if (arBookid.Length > 0) arBookid.Remove(arBookid.Length - 1, 1);
-                    if (MessageBox.Show("Books Loaned:" + arBookid.ToString() + "\nMemberID:" + bt.MemberID + "\nLend Rate:" + strLendRate + "\nFine:" + strFine + "\nBalance:" + strBalance, "Confirm Transaction", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Books Loaned:" + arBookid.ToString() + "\nMemberID:" + bt.MemberID + "\nLend Rate:" + strLendRate , "Confirm Transaction", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         for (int i = 0; i < gridTrans.RowCount; i++)
                         {
@@ -226,9 +235,12 @@ namespace NewSoft
                                 //bt.ReturnDate = DateTime.Parse(dateTransReturn.Text).ToShortDateString();
                                 bt.CreatedDate = DateTime.Now;
                                 bt.LendRate = Int32.Parse(gridTrans["LendRate", i].Value.ToString());
-                                bt.Fine = Int32.Parse(gridTrans["Fine", i].Value.ToString());
-                                bt.LibBal = Int32.Parse(gridTrans["LibBal", i].Value.ToString());
-                                bt.MemBal = Int32.Parse(gridTrans["MemBal", i].Value.ToString());
+                                //bt.Fine = Int32.Parse(gridTrans["Fine", i].Value.ToString());
+                                bt.Fine = 0;
+                                //bt.LibBal = Int32.Parse(gridTrans["LibBal", i].Value.ToString());
+                                //bt.MemBal = Int32.Parse(gridTrans["MemBal", i].Value.ToString());
+                                bt.LibBal = 0;
+                                bt.MemBal = 0;
                                 bt.RenewalDays = Int32.Parse(gridTrans["RenewalDays", i].Value.ToString());
                                 transRep.InsertBookTrans(bt);
                             }
@@ -243,43 +255,7 @@ namespace NewSoft
                         //lbt.displayTrans(bt, gridTrans);
                     }
                 }
-                //else
-                //{
-                //    if (dateTransReturn.Checked)
-                //    {
-                //        MessageBox.Show("You cannot specify Return date for Loan Processing");
-                //        return;
-                //    }
-
-                //    if (transRep.GetLoanDetailsBooksMem(bt.BookID, bt.MemberID, true).Rows.Count > 0)
-                //    {
-                //        MessageBox.Show("Bookid " + txtTransBookid.Text + " already loaned out");
-                //        return;
-                //    }
-                //    if (MessageBox.Show("Books Loaned:" + txtTransBookid.Text + "\nMemberID:" + txtTransMemId.Text + "\nLend Rate:" + txtTransLendRate.Text + "\nFine:" + txtTransFine.Text + "\nBalance:" + txtMemBal.Text + "\nRenewal Days:" + txtRenewal.Text, "Confirm Transaction", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                //    {
-                //        bt.BookID = txtTransBookid.Text.ToString();
-                //        bt.MemberID = txtTransMemId.Text;
-                //        bt.LendDate = DateTime.Parse(dateTransLoan.Text);
-                //        bt.DueDate = DateTime.Parse(dateTransDue.Text);
-                //        bt.LendRate = Int32.Parse(txtTransLendRate.Text);
-                //        bt.Fine = Int32.Parse(txtTransFine.Text);
-                //        bt.LibBal = Int32.Parse(txtLibBal.Text);
-                //        bt.MemBal = Int32.Parse(txtMemBal.Text);
-                //        //bt.MemBal=txt
-                //        bt.RenewalDays = Int32.Parse(txtRenewal.Text);
-                //        transRep.InsertBookTrans(bt);
-                //        gridTrans.DataSource = transRep.GetTransLoanDetails(bt.MemberID);
-                //        //updateLoanReturn(bt, false, true);
-
-                //        //bt.LendDate = "";
-                //        //bt.DueDate = "";
-                //        //bt.ReturnDate = "";
-
-                //        //LibBookTrans lbt = new LibBookTrans();
-                //        //lbt.displayTrans(bt, gridTrans);
-                //    }
-                //}
+                
             }
         }
 
@@ -335,24 +311,29 @@ namespace NewSoft
                         //DateTime countDate=DateTime.Today-DateTime.Parse(ds.Rows[0]["DueDate"].ToString());
                         //int suggFine = Int32.Parse((DateTime.Today - DateTime.Parse(ds.Rows[0]["DueDate"].ToString())).TotalDays.ToString());
                         //if (suggFine > 0)
-                            //suggFine = Int32.Parse(((suggFine / 15) * bt.LendRate*0.75).ToString());
+                        //suggFine = Int32.Parse(((suggFine / 15) * bt.LendRate*0.75).ToString());
                         //bt.Fine = Int32.Parse(txtTransFine.Text);
-                        bt.LibBal = Int32.Parse(txtLibBal.Text);
-                        bt.MemBal = Int32.Parse(txtMemBal.Text);
-
+                        //bt.LibBal = Int32.Parse(txtLibBal.Text);
+                        //bt.MemBal = Int32.Parse(txtMemBal.Text);
+                        bt.Fine = 0;
+                        bt.LibBal = 0;
+                        bt.MemBal = 0;
+                         
                         //if (!bt.Fine.Equals(""))
                             //strFine = bt.Fine;// +strFine;
                         if (!bt.LendRate.Equals(""))
                             strLendRate = bt.LendRate + strLendRate;
-                        if (!bt.MemBal.Equals(""))
-                            strMemBalance = bt.MemBal; //+ strMemBalance;
-                        if (!bt.LibBal.Equals(""))
-                            strLibBalance = bt.LibBal; //+ strLibBalance;
-
-
+                        //if (!bt.MemBal.Equals(""))
+                        //    strMemBalance = bt.MemBal; //+ strMemBalance;
+                        //if (!bt.LibBal.Equals(""))
+                        //    strLibBalance = bt.LibBal; //+ strLibBalance;
+                        //strFine = Int32.Parse(gridTrans["fine", i].Value.ToString()) + strFine;
+                        strFine = 0;
                         //bt.LendRate = "";
                         //bt.Fine = "";
                         //bt.LibBal = "";
+                        strLibBalance=0;
+                        strMemBalance = 0;
                         arBookid.Append(bt.BookID + ",");
                         //updateLoanReturn(bt, false, false);
                     }
@@ -360,7 +341,7 @@ namespace NewSoft
                 if (isMulLoan)
                 {
                     if (arBookid.Length > 0) arBookid.Remove(arBookid.Length - 1, 1);
-                    if (MessageBox.Show("Books Returned:" + arBookid.ToString() + "\nMemberID:" + bt.MemberID + "\nLend Rate:" + strLendRate + "\nMem Bal:" + strMemBalance + "\nLib Bal:" + strLibBalance, "Confirm Transaction", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Books Returned:" + arBookid.ToString() + "\nMemberID:" + bt.MemberID + "\nLend Rate:" + strLendRate , "Confirm Transaction", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         for (int i = 0; i < gridTrans.RowCount; i++)
                         {
@@ -369,11 +350,15 @@ namespace NewSoft
                             {
                                 Entities.booktran btTran = new booktran();                                
                                 btTran.TRANSID = Int32.Parse(gridTrans["TransID", i].Value.ToString());
-                                btTran.ReturnDate = DateTime.Parse(dateTransReturn.Text);                                
+                                btTran.ReturnDate = DateTime.Parse(dateTransReturn.Text);
+                                //btTran.Fine = strFine;
                                 //btTran.Fine = Int32.Parse(txtTransFine.Text);
                                 //btTran.LibBal = Int32.Parse(txtLibBal.Text);
                                 //btTran.MemBal = Int32.Parse(txtMemBal.Text);
-                                transRep.UpdateBookReturn(btTran, Int32.Parse(gridTrans["TransID", i].Value.ToString()));
+                                btTran.Fine = 0;
+                                btTran.LibBal = 0;
+                                btTran.MemBal = 0;
+                                transRep.UpdateBookReturn(btTran, btTran.TRANSID);
                                 //tempID = i;
                             }
                             //if (tempID > 0)
@@ -406,9 +391,12 @@ namespace NewSoft
             bt.ReturnDate =null;
             bt.CreatedDate = DateTime.Now;
             bt.LendRate = Int32.Parse(txtTransLendRate.Text);
-            bt.Fine = Int32.Parse(txtTransFine.Text);
-            bt.LibBal = Int32.Parse(txtLibBal.Text);
-            bt.MemBal = Int32.Parse(txtMemBal.Text);
+            //bt.Fine = Int32.Parse(txtTransFine.Text);
+            bt.Fine = 0;
+            //bt.LibBal = Int32.Parse(txtLibBal.Text);
+            //bt.MemBal = Int32.Parse(txtMemBal.Text);
+            bt.LibBal = 0;
+            bt.MemBal = 0;
             bt.RenewalDays = Int32.Parse(txtRenewal.Text);
             bt.TRANSID=Int32.Parse(lblTransId.Text);
             if(dateTransReturn.Checked)
@@ -430,6 +418,37 @@ namespace NewSoft
             }
         }
 
+        private void btnFineCalc_Click(object sender, EventArgs e)
+        {
+
+            if (gridTrans.RowCount > 0)
+            {
+                for (int i = 0; i < gridTrans.RowCount; i++)
+                {
+                    if (gridTrans[0, i].EditedFormattedValue.ToString().Equals("True"))
+                    {
+                        string transMemberid = gridTrans["memberid", i].Value.ToString();
+                        string transBookid = gridTrans["bookid", i].Value.ToString();
+
+                        //gridTrans[gridTrans.Columns["fine"].Index, i].Value = transRep.CalculateFine(transBookid, transMemberid, chkRenewal.Checked);
+                        MessageBox.Show(transRep.CalculateFine(transBookid, transMemberid, chkRenewal.Checked), "Fine for MemberID:" + transMemberid+ "and BookID:"+transBookid);
+
+                        //if (bt.MemberID.Equals(""))
+                        //{
+                        //    MessageBox.Show("MemberID cannot be empty");
+                        //    return;
+                        //}
+
+
+
+                    }
+
+                }
+                
+                chkRenewal.Checked = false;
+            }
+        }
+
         private void leave_MemId_Trans(object sender, EventArgs e)
         {
             setTransMemName();            
@@ -443,7 +462,7 @@ namespace NewSoft
             ds = memRep.GetMemberIDDetails(txtTransMemId.Text);
             if (ds.Rows.Count > 0)
             {
-                txtTransMemName.Text = ds.Rows[0]["MemberName"].ToString();
+                lblTransMemName.Text = ds.Rows[0]["MemberName"].ToString();
                 lblPhone.Text = ds.Rows[0]["Mobile"].ToString();
             }
             dsTrans = transRep.GetLoanDetailsBooksMem(txtTransBookid.Text, txtTransMemId.Text);
@@ -453,7 +472,7 @@ namespace NewSoft
             }
             lblBalAmt.Text = transRep.GetMemBalAmt(txtTransMemId.Text).ToString();
             lblLastVisitedvalue.Text = transRep.GetMemLastVisited(txtTransMemId.Text);
-            lblMemberNotes.Text = memRep.GetMemberNotes(txtTransMemId.Text).Rows[0]["Notes"].ToString();
+            lblMemberNotes.Text = memRep.GetMemberNotes(txtTransMemId.Text);
         }
         #endregion
 

@@ -56,6 +56,9 @@
     <Compile Include="author.cs">
       <DependentUpon>LibDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="balance.cs">
+      <DependentUpon>LibDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="book.cs">
       <DependentUpon>LibDB.tt</DependentUpon>
@@ -72,6 +75,9 @@
     <Compile Include="DBConnection.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="DBManagerFactory.cs" />
+    <Compile Include="Fine.cs">
+      <DependentUpon>LibDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="IDBManager.cs" />
     <Compile Include="LibAccRepository.cs" />
     <Compile Include="LibDB.Context.cs">

@@ -28,8 +28,8 @@
         /// </summary>
         protected void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pageMember = new System.Windows.Forms.TabPage();
             this.btnMemAll = new System.Windows.Forms.Button();
             this.btnMemSearch = new System.Windows.Forms.Button();
@@ -62,12 +62,17 @@
             this.lstNumbers = new System.Windows.Forms.ComboBox();
             this.gridMembers = new System.Windows.Forms.DataGridView();
             this.pageTrans = new System.Windows.Forms.TabPage();
+            this.btnAddFine = new System.Windows.Forms.Button();
+            this.btnFineCalc = new System.Windows.Forms.Button();
             this.lblMemberNotes = new System.Windows.Forms.Label();
+            this.btnAddBal = new System.Windows.Forms.Button();
             this.lblTransId = new System.Windows.Forms.Label();
             this.layoutTrans = new System.Windows.Forms.TableLayoutPanel();
             this.gridTrans = new System.Windows.Forms.DataGridView();
             this.cmnTrans = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.transPanel = new System.Windows.Forms.Panel();
+            this.lblTransMemName = new System.Windows.Forms.Label();
+            this.chkRenewal = new System.Windows.Forms.CheckBox();
             this.lblLastVisitedvalue = new System.Windows.Forms.Label();
             this.lblLastVisited = new System.Windows.Forms.Label();
             this.lblBalAmt = new System.Windows.Forms.Label();
@@ -75,8 +80,6 @@
             this.chkSetDate = new System.Windows.Forms.CheckBox();
             this.btnMemWish = new System.Windows.Forms.Button();
             this.lblAlreadyRead = new System.Windows.Forms.Label();
-            this.lblLibBal = new System.Windows.Forms.Label();
-            this.txtLibBal = new System.Windows.Forms.TextBox();
             this.lblPh = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblRenewal = new System.Windows.Forms.Label();
@@ -91,9 +94,7 @@
             this.lblTransDue = new System.Windows.Forms.Label();
             this.lblTransLendDate = new System.Windows.Forms.Label();
             this.lblTransFine = new System.Windows.Forms.Label();
-            this.lblTransBal = new System.Windows.Forms.Label();
             this.lblTransLendRate = new System.Windows.Forms.Label();
-            this.txtMemBal = new System.Windows.Forms.TextBox();
             this.lblTransMemberID = new System.Windows.Forms.Label();
             this.lblTansBookID = new System.Windows.Forms.Label();
             this.txtTransFine = new System.Windows.Forms.TextBox();
@@ -102,11 +103,8 @@
             this.dateTransReturn = new System.Windows.Forms.DateTimePicker();
             this.dateTransDue = new System.Windows.Forms.DateTimePicker();
             this.dateTransLoan = new System.Windows.Forms.DateTimePicker();
-            this.txtTransMemName = new System.Windows.Forms.TextBox();
             this.txtTransBookid = new System.Windows.Forms.TextBox();
             this.btnSearchDate = new System.Windows.Forms.Button();
-            this.dateTo = new System.Windows.Forms.DateTimePicker();
-            this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.btnAll_Trans = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
             this.btnSearch_trans = new System.Windows.Forms.Button();
@@ -118,6 +116,8 @@
             this.btnShowWishList = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblISBN = new System.Windows.Forms.Label();
+            this.txtISBN = new System.Windows.Forms.TextBox();
             this.lstAvaStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblSalepricedisplay = new System.Windows.Forms.Label();
@@ -163,8 +163,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.mainTab = new System.Windows.Forms.TabControl();
             this.tabAccounts = new System.Windows.Forms.TabPage();
-            this.lblAccMemBalValue = new System.Windows.Forms.Label();
-            this.lblAccMemBal = new System.Windows.Forms.Label();
             this.lblAccAmtBal = new System.Windows.Forms.Label();
             this.lblAccBal = new System.Windows.Forms.Label();
             this.btnAccGo = new System.Windows.Forms.Button();
@@ -174,8 +172,6 @@
             this.lblAmtTrans = new System.Windows.Forms.Label();
             this.lblAccTrans = new System.Windows.Forms.Label();
             this.dateAcc = new System.Windows.Forms.DateTimePicker();
-            this.txtISBN = new System.Windows.Forms.TextBox();
-            this.lblISBN = new System.Windows.Forms.Label();
             this.pageMember.SuspendLayout();
             this.memLayout.SuspendLayout();
             this.memPanel.SuspendLayout();
@@ -527,12 +523,13 @@
             // pageTrans
             // 
             this.pageTrans.BackColor = System.Drawing.Color.LightGray;
+            this.pageTrans.Controls.Add(this.btnAddFine);
+            this.pageTrans.Controls.Add(this.btnFineCalc);
             this.pageTrans.Controls.Add(this.lblMemberNotes);
+            this.pageTrans.Controls.Add(this.btnAddBal);
             this.pageTrans.Controls.Add(this.lblTransId);
             this.pageTrans.Controls.Add(this.layoutTrans);
             this.pageTrans.Controls.Add(this.btnSearchDate);
-            this.pageTrans.Controls.Add(this.dateTo);
-            this.pageTrans.Controls.Add(this.dateFrom);
             this.pageTrans.Controls.Add(this.btnAll_Trans);
             this.pageTrans.Controls.Add(this.btnLoan);
             this.pageTrans.Controls.Add(this.btnSearch_trans);
@@ -544,13 +541,43 @@
             this.pageTrans.TabIndex = 2;
             this.pageTrans.Text = "Transaction";
             // 
+            // btnAddFine
+            // 
+            this.btnAddFine.Location = new System.Drawing.Point(520, 86);
+            this.btnAddFine.Name = "btnAddFine";
+            this.btnAddFine.Size = new System.Drawing.Size(105, 23);
+            this.btnAddFine.TabIndex = 46;
+            this.btnAddFine.Text = "Add Fine";
+            this.btnAddFine.UseVisualStyleBackColor = true;
+            this.btnAddFine.Click += new System.EventHandler(this.btnAddFine_Click);
+            // 
+            // btnFineCalc
+            // 
+            this.btnFineCalc.Location = new System.Drawing.Point(633, 86);
+            this.btnFineCalc.Name = "btnFineCalc";
+            this.btnFineCalc.Size = new System.Drawing.Size(75, 23);
+            this.btnFineCalc.TabIndex = 43;
+            this.btnFineCalc.Text = "FineCalc";
+            this.btnFineCalc.UseVisualStyleBackColor = true;
+            this.btnFineCalc.Click += new System.EventHandler(this.btnFineCalc_Click);
+            // 
             // lblMemberNotes
             // 
             this.lblMemberNotes.AutoSize = true;
             this.lblMemberNotes.Location = new System.Drawing.Point(9, 7);
             this.lblMemberNotes.Name = "lblMemberNotes";
             this.lblMemberNotes.Size = new System.Drawing.Size(0, 13);
-            this.lblMemberNotes.TabIndex = 12;
+            this.lblMemberNotes.TabIndex = 2;
+            // 
+            // btnAddBal
+            // 
+            this.btnAddBal.Location = new System.Drawing.Point(398, 86);
+            this.btnAddBal.Name = "btnAddBal";
+            this.btnAddBal.Size = new System.Drawing.Size(107, 23);
+            this.btnAddBal.TabIndex = 45;
+            this.btnAddBal.Text = "Add Balance";
+            this.btnAddBal.UseVisualStyleBackColor = true;
+            this.btnAddBal.Click += new System.EventHandler(this.btnAddBal_Click);
             // 
             // lblTransId
             // 
@@ -603,6 +630,8 @@
             // 
             this.transPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.transPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.transPanel.Controls.Add(this.lblTransMemName);
+            this.transPanel.Controls.Add(this.chkRenewal);
             this.transPanel.Controls.Add(this.lblLastVisitedvalue);
             this.transPanel.Controls.Add(this.lblLastVisited);
             this.transPanel.Controls.Add(this.lblBalAmt);
@@ -610,8 +639,6 @@
             this.transPanel.Controls.Add(this.chkSetDate);
             this.transPanel.Controls.Add(this.btnMemWish);
             this.transPanel.Controls.Add(this.lblAlreadyRead);
-            this.transPanel.Controls.Add(this.lblLibBal);
-            this.transPanel.Controls.Add(this.txtLibBal);
             this.transPanel.Controls.Add(this.lblPh);
             this.transPanel.Controls.Add(this.lblPhone);
             this.transPanel.Controls.Add(this.lblRenewal);
@@ -626,9 +653,7 @@
             this.transPanel.Controls.Add(this.lblTransDue);
             this.transPanel.Controls.Add(this.lblTransLendDate);
             this.transPanel.Controls.Add(this.lblTransFine);
-            this.transPanel.Controls.Add(this.lblTransBal);
             this.transPanel.Controls.Add(this.lblTransLendRate);
-            this.transPanel.Controls.Add(this.txtMemBal);
             this.transPanel.Controls.Add(this.lblTransMemberID);
             this.transPanel.Controls.Add(this.lblTansBookID);
             this.transPanel.Controls.Add(this.txtTransFine);
@@ -637,7 +662,6 @@
             this.transPanel.Controls.Add(this.dateTransReturn);
             this.transPanel.Controls.Add(this.dateTransDue);
             this.transPanel.Controls.Add(this.dateTransLoan);
-            this.transPanel.Controls.Add(this.txtTransMemName);
             this.transPanel.Controls.Add(this.txtTransBookid);
             this.transPanel.Location = new System.Drawing.Point(358, 3);
             this.transPanel.Name = "transPanel";
@@ -645,11 +669,29 @@
             this.transPanel.Size = new System.Drawing.Size(418, 428);
             this.transPanel.TabIndex = 2;
             // 
+            // lblTransMemName
+            // 
+            this.lblTransMemName.AutoSize = true;
+            this.lblTransMemName.Location = new System.Drawing.Point(209, 21);
+            this.lblTransMemName.Name = "lblTransMemName";
+            this.lblTransMemName.Size = new System.Drawing.Size(0, 13);
+            this.lblTransMemName.TabIndex = 45;
+            // 
+            // chkRenewal
+            // 
+            this.chkRenewal.AutoSize = true;
+            this.chkRenewal.Location = new System.Drawing.Point(340, 149);
+            this.chkRenewal.Name = "chkRenewal";
+            this.chkRenewal.Size = new System.Drawing.Size(68, 17);
+            this.chkRenewal.TabIndex = 44;
+            this.chkRenewal.Text = "Renewal";
+            this.chkRenewal.UseVisualStyleBackColor = true;
+            // 
             // lblLastVisitedvalue
             // 
             this.lblLastVisitedvalue.AutoSize = true;
             this.lblLastVisitedvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastVisitedvalue.Location = new System.Drawing.Point(340, 129);
+            this.lblLastVisitedvalue.Location = new System.Drawing.Point(343, 50);
             this.lblLastVisitedvalue.Name = "lblLastVisitedvalue";
             this.lblLastVisitedvalue.Size = new System.Drawing.Size(0, 13);
             this.lblLastVisitedvalue.TabIndex = 42;
@@ -658,7 +700,7 @@
             // 
             this.lblLastVisited.AutoSize = true;
             this.lblLastVisited.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastVisited.Location = new System.Drawing.Point(279, 128);
+            this.lblLastVisited.Location = new System.Drawing.Point(279, 49);
             this.lblLastVisited.Name = "lblLastVisited";
             this.lblLastVisited.Size = new System.Drawing.Size(64, 13);
             this.lblLastVisited.TabIndex = 41;
@@ -667,7 +709,7 @@
             // lblBalAmt
             // 
             this.lblBalAmt.AutoSize = true;
-            this.lblBalAmt.Location = new System.Drawing.Point(244, 127);
+            this.lblBalAmt.Location = new System.Drawing.Point(244, 50);
             this.lblBalAmt.Name = "lblBalAmt";
             this.lblBalAmt.Size = new System.Drawing.Size(0, 13);
             this.lblBalAmt.TabIndex = 40;
@@ -675,7 +717,7 @@
             // lblDisplayBal
             // 
             this.lblDisplayBal.AutoSize = true;
-            this.lblDisplayBal.Location = new System.Drawing.Point(216, 127);
+            this.lblDisplayBal.Location = new System.Drawing.Point(216, 49);
             this.lblDisplayBal.Name = "lblDisplayBal";
             this.lblDisplayBal.Size = new System.Drawing.Size(28, 13);
             this.lblDisplayBal.TabIndex = 39;
@@ -684,17 +726,17 @@
             // chkSetDate
             // 
             this.chkSetDate.AutoSize = true;
-            this.chkSetDate.Location = new System.Drawing.Point(233, 234);
+            this.chkSetDate.Location = new System.Drawing.Point(233, 202);
             this.chkSetDate.Name = "chkSetDate";
             this.chkSetDate.Size = new System.Drawing.Size(68, 17);
-            this.chkSetDate.TabIndex = 38;
+            this.chkSetDate.TabIndex = 4;
             this.chkSetDate.Text = "Set Date";
             this.chkSetDate.UseVisualStyleBackColor = true;
             this.chkSetDate.CheckedChanged += new System.EventHandler(this.chkSetDate_CheckedChanged);
             // 
             // btnMemWish
             // 
-            this.btnMemWish.Location = new System.Drawing.Point(353, 93);
+            this.btnMemWish.Location = new System.Drawing.Point(353, 19);
             this.btnMemWish.Name = "btnMemWish";
             this.btnMemWish.Size = new System.Drawing.Size(29, 20);
             this.btnMemWish.TabIndex = 37;
@@ -705,33 +747,16 @@
             // lblAlreadyRead
             // 
             this.lblAlreadyRead.AutoSize = true;
-            this.lblAlreadyRead.Location = new System.Drawing.Point(332, 96);
+            this.lblAlreadyRead.Location = new System.Drawing.Point(328, 22);
             this.lblAlreadyRead.Name = "lblAlreadyRead";
             this.lblAlreadyRead.Size = new System.Drawing.Size(35, 13);
             this.lblAlreadyRead.TabIndex = 36;
             this.lblAlreadyRead.Text = "label1";
             // 
-            // lblLibBal
-            // 
-            this.lblLibBal.AutoSize = true;
-            this.lblLibBal.Location = new System.Drawing.Point(152, 158);
-            this.lblLibBal.Name = "lblLibBal";
-            this.lblLibBal.Size = new System.Drawing.Size(36, 13);
-            this.lblLibBal.TabIndex = 35;
-            this.lblLibBal.Text = "LibBal";
-            // 
-            // txtLibBal
-            // 
-            this.txtLibBal.Location = new System.Drawing.Point(199, 154);
-            this.txtLibBal.Name = "txtLibBal";
-            this.txtLibBal.Size = new System.Drawing.Size(42, 20);
-            this.txtLibBal.TabIndex = 34;
-            this.txtLibBal.Text = "0";
-            // 
             // lblPh
             // 
             this.lblPh.AutoSize = true;
-            this.lblPh.Location = new System.Drawing.Point(88, 126);
+            this.lblPh.Location = new System.Drawing.Point(88, 49);
             this.lblPh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPh.Name = "lblPh";
             this.lblPh.Size = new System.Drawing.Size(23, 13);
@@ -740,7 +765,7 @@
             // 
             // lblPhone
             // 
-            this.lblPhone.Location = new System.Drawing.Point(118, 127);
+            this.lblPhone.Location = new System.Drawing.Point(115, 49);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(92, 15);
@@ -749,7 +774,7 @@
             // lblRenewal
             // 
             this.lblRenewal.AutoSize = true;
-            this.lblRenewal.Location = new System.Drawing.Point(166, 193);
+            this.lblRenewal.Location = new System.Drawing.Point(258, 150);
             this.lblRenewal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRenewal.Name = "lblRenewal";
             this.lblRenewal.Size = new System.Drawing.Size(23, 13);
@@ -758,7 +783,7 @@
             // 
             // txtRenewal
             // 
-            this.txtRenewal.Location = new System.Drawing.Point(199, 190);
+            this.txtRenewal.Location = new System.Drawing.Point(288, 147);
             this.txtRenewal.Name = "txtRenewal";
             this.txtRenewal.Size = new System.Drawing.Size(42, 20);
             this.txtRenewal.TabIndex = 28;
@@ -766,7 +791,7 @@
             // 
             // btnTransUpdate
             // 
-            this.btnTransUpdate.Location = new System.Drawing.Point(221, 28);
+            this.btnTransUpdate.Location = new System.Drawing.Point(221, 83);
             this.btnTransUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnTransUpdate.Name = "btnTransUpdate";
             this.btnTransUpdate.Size = new System.Drawing.Size(31, 24);
@@ -777,17 +802,17 @@
             // 
             // txtTransMemId
             // 
-            this.txtTransMemId.Location = new System.Drawing.Point(90, 93);
+            this.txtTransMemId.Location = new System.Drawing.Point(90, 19);
             this.txtTransMemId.Margin = new System.Windows.Forms.Padding(2);
             this.txtTransMemId.Name = "txtTransMemId";
             this.txtTransMemId.Size = new System.Drawing.Size(98, 20);
-            this.txtTransMemId.TabIndex = 26;
+            this.txtTransMemId.TabIndex = 1;
             this.txtTransMemId.Leave += new System.EventHandler(this.leave_MemId_Trans);
             // 
             // lblBookLabel
             // 
             this.lblBookLabel.AutoSize = true;
-            this.lblBookLabel.Location = new System.Drawing.Point(97, 65);
+            this.lblBookLabel.Location = new System.Drawing.Point(92, 110);
             this.lblBookLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBookLabel.Name = "lblBookLabel";
             this.lblBookLabel.Size = new System.Drawing.Size(0, 13);
@@ -795,7 +820,7 @@
             // 
             // btnTransClear
             // 
-            this.btnTransClear.Location = new System.Drawing.Point(257, 28);
+            this.btnTransClear.Location = new System.Drawing.Point(257, 83);
             this.btnTransClear.Name = "btnTransClear";
             this.btnTransClear.Size = new System.Drawing.Size(31, 24);
             this.btnTransClear.TabIndex = 24;
@@ -805,7 +830,7 @@
             // 
             // btnAddLoan
             // 
-            this.btnAddLoan.Location = new System.Drawing.Point(190, 28);
+            this.btnAddLoan.Location = new System.Drawing.Point(190, 83);
             this.btnAddLoan.Name = "btnAddLoan";
             this.btnAddLoan.Size = new System.Drawing.Size(26, 24);
             this.btnAddLoan.TabIndex = 23;
@@ -815,7 +840,7 @@
             // 
             // btn_Ret_Trans
             // 
-            this.btn_Ret_Trans.Location = new System.Drawing.Point(200, 377);
+            this.btn_Ret_Trans.Location = new System.Drawing.Point(200, 356);
             this.btn_Ret_Trans.Name = "btn_Ret_Trans";
             this.btn_Ret_Trans.Size = new System.Drawing.Size(99, 29);
             this.btn_Ret_Trans.TabIndex = 22;
@@ -826,7 +851,7 @@
             // lblTransRetDate
             // 
             this.lblTransRetDate.AutoSize = true;
-            this.lblTransRetDate.Location = new System.Drawing.Point(8, 334);
+            this.lblTransRetDate.Location = new System.Drawing.Point(8, 302);
             this.lblTransRetDate.Name = "lblTransRetDate";
             this.lblTransRetDate.Size = new System.Drawing.Size(65, 13);
             this.lblTransRetDate.TabIndex = 20;
@@ -835,7 +860,7 @@
             // lblTransDue
             // 
             this.lblTransDue.AutoSize = true;
-            this.lblTransDue.Location = new System.Drawing.Point(19, 284);
+            this.lblTransDue.Location = new System.Drawing.Point(19, 252);
             this.lblTransDue.Name = "lblTransDue";
             this.lblTransDue.Size = new System.Drawing.Size(53, 13);
             this.lblTransDue.TabIndex = 19;
@@ -844,7 +869,7 @@
             // lblTransLendDate
             // 
             this.lblTransLendDate.AutoSize = true;
-            this.lblTransLendDate.Location = new System.Drawing.Point(19, 234);
+            this.lblTransLendDate.Location = new System.Drawing.Point(19, 202);
             this.lblTransLendDate.Name = "lblTransLendDate";
             this.lblTransLendDate.Size = new System.Drawing.Size(57, 13);
             this.lblTransLendDate.TabIndex = 18;
@@ -853,43 +878,25 @@
             // lblTransFine
             // 
             this.lblTransFine.AutoSize = true;
-            this.lblTransFine.Location = new System.Drawing.Point(48, 194);
+            this.lblTransFine.Location = new System.Drawing.Point(162, 150);
             this.lblTransFine.Name = "lblTransFine";
             this.lblTransFine.Size = new System.Drawing.Size(27, 13);
             this.lblTransFine.TabIndex = 17;
             this.lblTransFine.Text = "Fine";
             // 
-            // lblTransBal
-            // 
-            this.lblTransBal.AutoSize = true;
-            this.lblTransBal.Location = new System.Drawing.Point(259, 158);
-            this.lblTransBal.Name = "lblTransBal";
-            this.lblTransBal.Size = new System.Drawing.Size(45, 13);
-            this.lblTransBal.TabIndex = 16;
-            this.lblTransBal.Text = "MemBal";
-            // 
             // lblTransLendRate
             // 
             this.lblTransLendRate.AutoSize = true;
-            this.lblTransLendRate.Location = new System.Drawing.Point(18, 162);
+            this.lblTransLendRate.Location = new System.Drawing.Point(18, 150);
             this.lblTransLendRate.Name = "lblTransLendRate";
             this.lblTransLendRate.Size = new System.Drawing.Size(57, 13);
             this.lblTransLendRate.TabIndex = 15;
             this.lblTransLendRate.Text = "Lend Rate";
             // 
-            // txtMemBal
-            // 
-            this.txtMemBal.Location = new System.Drawing.Point(320, 154);
-            this.txtMemBal.Name = "txtMemBal";
-            this.txtMemBal.Size = new System.Drawing.Size(42, 20);
-            this.txtMemBal.TabIndex = 14;
-            this.txtMemBal.Text = "0";
-            this.txtMemBal.TextChanged += new System.EventHandler(this.txtLibBal_TextChanged);
-            // 
             // lblTransMemberID
             // 
             this.lblTransMemberID.AutoSize = true;
-            this.lblTransMemberID.Location = new System.Drawing.Point(14, 97);
+            this.lblTransMemberID.Location = new System.Drawing.Point(14, 23);
             this.lblTransMemberID.Name = "lblTransMemberID";
             this.lblTransMemberID.Size = new System.Drawing.Size(59, 13);
             this.lblTransMemberID.TabIndex = 13;
@@ -898,7 +905,7 @@
             // lblTansBookID
             // 
             this.lblTansBookID.AutoSize = true;
-            this.lblTansBookID.Location = new System.Drawing.Point(14, 34);
+            this.lblTansBookID.Location = new System.Drawing.Point(14, 89);
             this.lblTansBookID.Name = "lblTansBookID";
             this.lblTansBookID.Size = new System.Drawing.Size(46, 13);
             this.lblTansBookID.TabIndex = 12;
@@ -906,23 +913,24 @@
             // 
             // txtTransFine
             // 
-            this.txtTransFine.Location = new System.Drawing.Point(98, 193);
+            this.txtTransFine.Location = new System.Drawing.Point(209, 147);
             this.txtTransFine.Name = "txtTransFine";
+            this.txtTransFine.ReadOnly = true;
             this.txtTransFine.Size = new System.Drawing.Size(43, 20);
             this.txtTransFine.TabIndex = 10;
             this.txtTransFine.Text = "0";
             // 
             // txtTransLendRate
             // 
-            this.txtTransLendRate.Location = new System.Drawing.Point(95, 158);
+            this.txtTransLendRate.Location = new System.Drawing.Point(95, 146);
             this.txtTransLendRate.Name = "txtTransLendRate";
             this.txtTransLendRate.Size = new System.Drawing.Size(48, 20);
-            this.txtTransLendRate.TabIndex = 9;
+            this.txtTransLendRate.TabIndex = 3;
             this.txtTransLendRate.Text = "0";
             // 
             // btnLoan_Trans
             // 
-            this.btnLoan_Trans.Location = new System.Drawing.Point(61, 377);
+            this.btnLoan_Trans.Location = new System.Drawing.Point(61, 356);
             this.btnLoan_Trans.Name = "btnLoan_Trans";
             this.btnLoan_Trans.Size = new System.Drawing.Size(100, 30);
             this.btnLoan_Trans.TabIndex = 7;
@@ -933,7 +941,7 @@
             // dateTransReturn
             // 
             this.dateTransReturn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTransReturn.Location = new System.Drawing.Point(94, 332);
+            this.dateTransReturn.Location = new System.Drawing.Point(94, 300);
             this.dateTransReturn.Name = "dateTransReturn";
             this.dateTransReturn.ShowCheckBox = true;
             this.dateTransReturn.Size = new System.Drawing.Size(126, 20);
@@ -942,7 +950,7 @@
             // dateTransDue
             // 
             this.dateTransDue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTransDue.Location = new System.Drawing.Point(92, 282);
+            this.dateTransDue.Location = new System.Drawing.Point(92, 250);
             this.dateTransDue.Name = "dateTransDue";
             this.dateTransDue.ShowCheckBox = true;
             this.dateTransDue.Size = new System.Drawing.Size(125, 20);
@@ -951,25 +959,18 @@
             // dateTransLoan
             // 
             this.dateTransLoan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTransLoan.Location = new System.Drawing.Point(94, 234);
+            this.dateTransLoan.Location = new System.Drawing.Point(94, 202);
             this.dateTransLoan.Name = "dateTransLoan";
             this.dateTransLoan.ShowCheckBox = true;
             this.dateTransLoan.Size = new System.Drawing.Size(123, 20);
             this.dateTransLoan.TabIndex = 4;
             // 
-            // txtTransMemName
-            // 
-            this.txtTransMemName.Location = new System.Drawing.Point(191, 93);
-            this.txtTransMemName.Name = "txtTransMemName";
-            this.txtTransMemName.Size = new System.Drawing.Size(139, 20);
-            this.txtTransMemName.TabIndex = 3;
-            // 
             // txtTransBookid
             // 
-            this.txtTransBookid.Location = new System.Drawing.Point(91, 32);
+            this.txtTransBookid.Location = new System.Drawing.Point(91, 87);
             this.txtTransBookid.Name = "txtTransBookid";
             this.txtTransBookid.Size = new System.Drawing.Size(93, 20);
-            this.txtTransBookid.TabIndex = 1;
+            this.txtTransBookid.TabIndex = 2;
             this.txtTransBookid.Leave += new System.EventHandler(this.leaveBookID);
             // 
             // btnSearchDate
@@ -981,24 +982,6 @@
             this.btnSearchDate.Text = "Search";
             this.btnSearchDate.UseVisualStyleBackColor = true;
             this.btnSearchDate.Click += new System.EventHandler(this.btnSearchDate_Click);
-            // 
-            // dateTo
-            // 
-            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(628, 57);
-            this.dateTo.Name = "dateTo";
-            this.dateTo.ShowCheckBox = true;
-            this.dateTo.Size = new System.Drawing.Size(110, 20);
-            this.dateTo.TabIndex = 8;
-            // 
-            // dateFrom
-            // 
-            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(506, 57);
-            this.dateFrom.Name = "dateFrom";
-            this.dateFrom.ShowCheckBox = true;
-            this.dateFrom.Size = new System.Drawing.Size(109, 20);
-            this.dateFrom.TabIndex = 7;
             // 
             // btnAll_Trans
             // 
@@ -1180,6 +1163,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 369);
             this.panel1.TabIndex = 2;
+            // 
+            // lblISBN
+            // 
+            this.lblISBN.AutoSize = true;
+            this.lblISBN.Location = new System.Drawing.Point(27, 259);
+            this.lblISBN.Name = "lblISBN";
+            this.lblISBN.Size = new System.Drawing.Size(32, 13);
+            this.lblISBN.TabIndex = 46;
+            this.lblISBN.Text = "ISBN";
+            // 
+            // txtISBN
+            // 
+            this.txtISBN.Location = new System.Drawing.Point(94, 252);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(157, 20);
+            this.txtISBN.TabIndex = 45;
             // 
             // lstAvaStatus
             // 
@@ -1506,19 +1505,19 @@
             this.gridBooks.AllowUserToAddRows = false;
             this.gridBooks.AllowUserToDeleteRows = false;
             this.gridBooks.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridBooks.Location = new System.Drawing.Point(0, 3);
             this.gridBooks.Name = "gridBooks";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridBooks.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridBooks.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridBooks.RowTemplate.Height = 24;
             this.gridBooks.Size = new System.Drawing.Size(386, 414);
             this.gridBooks.TabIndex = 1;
@@ -1633,8 +1632,6 @@
             // tabAccounts
             // 
             this.tabAccounts.BackColor = System.Drawing.Color.LightGray;
-            this.tabAccounts.Controls.Add(this.lblAccMemBalValue);
-            this.tabAccounts.Controls.Add(this.lblAccMemBal);
             this.tabAccounts.Controls.Add(this.lblAccAmtBal);
             this.tabAccounts.Controls.Add(this.lblAccBal);
             this.tabAccounts.Controls.Add(this.btnAccGo);
@@ -1652,24 +1649,6 @@
             this.tabAccounts.TabIndex = 4;
             this.tabAccounts.Text = "Accounts";
             // 
-            // lblAccMemBalValue
-            // 
-            this.lblAccMemBalValue.AutoSize = true;
-            this.lblAccMemBalValue.Location = new System.Drawing.Point(143, 193);
-            this.lblAccMemBalValue.Name = "lblAccMemBalValue";
-            this.lblAccMemBalValue.Size = new System.Drawing.Size(0, 13);
-            this.lblAccMemBalValue.TabIndex = 10;
-            // 
-            // lblAccMemBal
-            // 
-            this.lblAccMemBal.AutoSize = true;
-            this.lblAccMemBal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccMemBal.Location = new System.Drawing.Point(82, 193);
-            this.lblAccMemBal.Name = "lblAccMemBal";
-            this.lblAccMemBal.Size = new System.Drawing.Size(51, 13);
-            this.lblAccMemBal.TabIndex = 9;
-            this.lblAccMemBal.Text = "MemBal";
-            // 
             // lblAccAmtBal
             // 
             this.lblAccAmtBal.AutoSize = true;
@@ -1686,9 +1665,9 @@
             this.lblAccBal.Location = new System.Drawing.Point(79, 162);
             this.lblAccBal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccBal.Name = "lblAccBal";
-            this.lblAccBal.Size = new System.Drawing.Size(42, 13);
+            this.lblAccBal.Size = new System.Drawing.Size(53, 13);
             this.lblAccBal.TabIndex = 7;
-            this.lblAccBal.Text = "LibBal";
+            this.lblAccBal.Text = "Balance";
             // 
             // btnAccGo
             // 
@@ -1758,22 +1737,6 @@
             this.dateAcc.Name = "dateAcc";
             this.dateAcc.Size = new System.Drawing.Size(111, 20);
             this.dateAcc.TabIndex = 0;
-            // 
-            // txtISBN
-            // 
-            this.txtISBN.Location = new System.Drawing.Point(94, 252);
-            this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(157, 20);
-            this.txtISBN.TabIndex = 45;
-            // 
-            // lblISBN
-            // 
-            this.lblISBN.AutoSize = true;
-            this.lblISBN.Location = new System.Drawing.Point(27, 259);
-            this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(32, 13);
-            this.lblISBN.TabIndex = 46;
-            this.lblISBN.Text = "ISBN";
             // 
             // frmLibSoft
             // 
@@ -1849,9 +1812,7 @@
         protected System.Windows.Forms.Label lblTransDue;
         protected System.Windows.Forms.Label lblTransLendDate;
         protected System.Windows.Forms.Label lblTransFine;
-        protected System.Windows.Forms.Label lblTransBal;
         protected System.Windows.Forms.Label lblTransLendRate;
-        protected System.Windows.Forms.TextBox txtMemBal;
 
         protected System.Windows.Forms.Label lblTransMemberID;
         protected System.Windows.Forms.Label lblTansBookID;
@@ -1868,13 +1829,9 @@
         protected System.Windows.Forms.DateTimePicker dateTransDue;
 
         protected System.Windows.Forms.DateTimePicker dateTransLoan;
-
-        protected System.Windows.Forms.TextBox txtTransMemName;
         protected System.Windows.Forms.TextBox txtTransBookid;
 
         protected System.Windows.Forms.Button btnSearchDate;
-        protected System.Windows.Forms.DateTimePicker dateTo;
-        protected System.Windows.Forms.DateTimePicker dateFrom;
         protected System.Windows.Forms.Button btnAll_Trans;
         protected System.Windows.Forms.Button btnLoan;
         protected System.Windows.Forms.Button btnSearch_trans;
@@ -1954,8 +1911,6 @@
         protected System.Windows.Forms.ComboBox lstSubcat;
         protected System.Windows.Forms.Button btnSubCatDel;
         protected System.Windows.Forms.Button btnSubCatAdd;
-        protected System.Windows.Forms.Label lblLibBal;
-        protected System.Windows.Forms.TextBox txtLibBal;
         protected System.Windows.Forms.ComboBox lstSeries;
         protected System.Windows.Forms.Label lblSeries;
         protected System.Windows.Forms.Button btnSeriesDel;
@@ -1973,8 +1928,6 @@
         private System.Windows.Forms.Label lblDisplayBal;
         private System.Windows.Forms.Label lblLastVisitedvalue;
         private System.Windows.Forms.Label lblLastVisited;
-        private System.Windows.Forms.Label lblAccMemBal;
-        private System.Windows.Forms.Label lblAccMemBalValue;
         private System.Windows.Forms.Button btnGrantList;
         private System.Windows.Forms.Label lblMemberNotes;
         private System.Windows.Forms.ComboBox lstAvaStatus;
@@ -1985,6 +1938,11 @@
         private System.Windows.Forms.Label lblSoldfor;
         private System.Windows.Forms.Label lblISBN;
         private System.Windows.Forms.TextBox txtISBN;
+        private System.Windows.Forms.Button btnFineCalc;
+        private System.Windows.Forms.CheckBox chkRenewal;
+        private System.Windows.Forms.Button btnAddBal;
+        private System.Windows.Forms.Button btnAddFine;
+        private System.Windows.Forms.Label lblTransMemName;
     }
 }
 

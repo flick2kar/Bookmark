@@ -34,5 +34,7 @@ namespace DALLayer
         public DbSet<member> members { get; set; }
         public DbSet<WishList> WishLists { get; set; }
         public DbSet<book> books { get; set; }
+        public DbSet<balance> balances { get; set; }
+        public DbSet<Fine> Fines { get; set; }
     }
 }

@@ -15,8 +15,14 @@ namespace DALLayer
             DataTable ds = new DataTable();
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
-                String strQuery = "SELECT sum(lendrate) lendrate,sum(fine) fine,sum(LibBal) LibBal,sum(MemBal) MemBal FROM booktrans where lenddate between '" + startDate + "' and '" + endDate + "'";
-                ds = dbMgr.ExecuteDataTable(CommandType.Text, strQuery);
+                //String strQuery = "SELECT sum(lendrate) lendrate,sum(fine) fine,sum(LibBal) LibBal,sum(MemBal) MemBal FROM booktrans bt where lenddate between '" + startDate + "' and '" + endDate + "'";
+                dbMgr.AddParameters("@startDate", startDate);
+                dbMgr.AddParameters("@endDate", endDate);
+                
+
+                //dbMgr.ExecuteScalar
+                ds = dbMgr.ExecuteDataTable(CommandType.StoredProcedure, "GetAccountDetails");
+                
             }
             return ds;
         }

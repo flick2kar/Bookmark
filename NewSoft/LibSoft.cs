@@ -23,12 +23,12 @@ namespace NewSoft
         CommonMethods cmMethods = new CommonMethods();
         String tempBookid = "";
         public DataSet dsMemberList = new DataSet();
-        
-        
+        //public string MemberID { get {return txtTransMemId.Text; } }
+
         //LibBookSearch libBooks=new LibBookSearch(frmLibSoft);
         public frmLibSoft()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -114,7 +114,7 @@ namespace NewSoft
         private void initializeTransPage()
         {   
             DisplayTransDetails();            
-            initializeTransData(Int32.Parse(gridTrans[6, 0].Value.ToString()));                 
+            initializeTransData(Int32.Parse(gridTrans[6, 0].Value.ToString()),-1);                 
         }
 
         
@@ -281,8 +281,18 @@ namespace NewSoft
             dateTransReturn.Checked = false;
         }
 
+        private void btnAddBal_Click(object sender, EventArgs e)
+        {
+            var form = new AddBalance();
+            form.Show();
+        }
+
+        private void btnAddFine_Click(object sender, EventArgs e)
+        {
+            var form = new AddFine();
+            form.Show();
+        }
+
         
-
-
     }
 }

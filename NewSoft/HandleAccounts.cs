@@ -17,8 +17,8 @@ namespace NewSoft
             ds=accRep.GetAccountDetails(dateAccStr.Text, dateAcc.Text);           
             lblAmtTrans.Text = ds.Rows[0]["lendrate"].ToString();
             lblAmtFine.Text = ds.Rows[0]["fine"].ToString();
-            lblAccAmtBal.Text = ds.Rows[0]["LibBal"].ToString();
-            lblAccMemBalValue.Text = ds.Rows[0]["MemBal"].ToString();
+            lblAccAmtBal.Text = ds.Rows[0]["balance"].ToString();
+            //lblAccMemBalValue.Text = ds.Rows[0]["MemBal"].ToString();
         }
     }
 }

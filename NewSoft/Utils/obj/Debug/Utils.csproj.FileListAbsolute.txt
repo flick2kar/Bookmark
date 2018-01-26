@@ -15,7 +15,7 @@ D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.dll
 D:\BookMark\TFS\Bookmark\NewSoft_Entity\NewSoft\Utils\obj\Debug\Utils.pdb
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\bin\Debug\Utils.dll
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\bin\Debug\Utils.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Debug\Utils.dll
 E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Debug\Utils.pdb
-E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache

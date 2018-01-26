@@ -29,7 +29,7 @@ namespace DALLayer
             DataTable ds = new DataTable();
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
-                String strQuery = "select BookID,MemberID,LendDate,DueDate,ReturnDate,LendRate,Fine,LibBal,MemBal,booktrans.TransID,RenewalDays from booktrans where transid=" + transID;
+                String strQuery = "select BookID,MemberID,LendDate,DueDate,ReturnDate,LendRate,LibBal,MemBal,booktrans.TransID,RenewalDays from booktrans where transid=" + transID;
                 ds = dbMgr.ExecuteDataTable(CommandType.Text, strQuery);
             }
             return ds;
@@ -51,8 +51,13 @@ namespace DALLayer
             int ds = 0;
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
-                String strQuery = "select isnull(sum(MemBal),0)-isnull(sum(LibBal),0) from booktrans where memberid='" + memberID + "' and returndate is null";
-                ds = Int32.Parse(dbMgr.ExecuteScalar(CommandType.Text, strQuery).ToString()) ;
+                String strQuery = "select SUM(balance) from balance where memberid='" + memberID + "'";
+                object objResult = dbMgr.ExecuteScalar(CommandType.Text, strQuery);
+                if (objResult != null && DBNull.Value != objResult)
+                {
+                    ds = (int)objResult;
+                }
+                    
             }
             return ds;
         }
@@ -62,7 +67,7 @@ namespace DALLayer
             string ds = "";
             using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
             {
-                String strQuery = "select MAX(LendDate) from booktrans where memberid='" + memberID + "'";
+                String strQuery = "select CONVERT(date,MAX(LendDate)) from booktrans where memberid='" + memberID + "'";
                 ds = dbMgr.ExecuteScalar(CommandType.Text, strQuery).ToString();
             }
             return ds;
@@ -85,6 +90,22 @@ namespace DALLayer
                 ds = dbMgr.ExecuteDataTable(CommandType.Text, strQuery);
             }
             return ds;
+        }
+
+        public String CalculateFine(string bookID,string memberid,bool fineorrenewal)
+        {
+            DataTable ds = new DataTable();
+            String finalfine = "";
+            using (DBManager dbMgr = new DBManager(DataProvider.SqlClient, DBConnection.Connstring))
+            {
+                dbMgr.AddParameters("@memberid", memberid);
+                dbMgr.AddParameters("@bookid", bookID);
+                dbMgr.AddParameters("@fineorrenewal", fineorrenewal);
+
+                //dbMgr.ExecuteScalar
+                finalfine = dbMgr.ExecuteScalar(CommandType.StoredProcedure, "spCalculateFine").ToString();
+            }
+            return finalfine;
         }
 
         public void InsertBookTrans(Entities.booktran tranObj)
@@ -120,6 +141,20 @@ namespace DALLayer
                 BaseRepository.CopyPropertyValues(btTran, bkUpdate);            
             dbCtx.SaveChanges();
 
+        }
+
+        public int AddBalance(Entities.balance tranObj)
+        {
+            Entities.LibEntities dbCtx = new Entities.LibEntities();
+            dbCtx.balances.Add(tranObj);
+            return dbCtx.SaveChanges();
+        }
+
+        public int AddFine(Entities.Fine tranObj)
+        {
+            Entities.LibEntities dbCtx = new Entities.LibEntities();
+            dbCtx.Fines.Add(tranObj);
+            return dbCtx.SaveChanges();
         }
     }
 }
