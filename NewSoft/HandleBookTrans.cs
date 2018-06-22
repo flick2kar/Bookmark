@@ -18,6 +18,7 @@ namespace NewSoft
 
         public void initializeTransData(int transID, int rowIndex)
         {
+            rowIndex = transID>0? 0 : rowIndex < 0 ? 0 : rowIndex;
             if (gridTrans.Rows.Count > 0)
             {  
                 DataTable ds = new DataTable();
@@ -26,19 +27,19 @@ namespace NewSoft
                     ds = CommonUIMethods.ConvertGridToTable(gridTrans);
                 else
                     ds = transRep.GetTransIDDetails(transID);
-                lblMemberNotes.Text = memRep.GetMemberNotes(ds.Rows[0]["MemberID"].ToString());
+                lblMemberNotes.Text = memRep.GetMemberNotes(ds.Rows[rowIndex]["MemberID"].ToString());
                 lblAlreadyRead.Text = "";
-                txtTransBookid.Text = ds.Rows[0]["BookID"].ToString();
-                txtTransMemId.Text = ds.Rows[0]["MemberID"].ToString();                
+                txtTransBookid.Text = ds.Rows[rowIndex]["BookID"].ToString();
+                txtTransMemId.Text = ds.Rows[rowIndex]["MemberID"].ToString();                
                 setTransMemName();
-                lblTransId.Text = ds.Rows[0]["TransID"].ToString();
-                dateTransLoan.Text = ds.Rows[0]["LendDate"].ToString();
-                dateTransDue.Text = ds.Rows[0]["DueDate"].ToString();
-                if(String.Compare(DateTime.MinValue.ToString(),ds.Rows[0]["ReturnDate"].ToString())==0)
+                lblTransId.Text = ds.Rows[rowIndex]["TransID"].ToString();
+                dateTransLoan.Text = ds.Rows[rowIndex]["LendDate"].ToString();
+                dateTransDue.Text = ds.Rows[rowIndex]["DueDate"].ToString();
+                if(String.Compare(DateTime.MinValue.ToString(),ds.Rows[rowIndex]["ReturnDate"].ToString())==0)
                     dateTransReturn.Text = "";
                 else
-                    dateTransReturn.Text = ds.Rows[0]["ReturnDate"].ToString();
-                txtTransLendRate.Text = ds.Rows[0]["LendRate"].ToString();
+                    dateTransReturn.Text = ds.Rows[rowIndex]["ReturnDate"].ToString();
+                txtTransLendRate.Text = ds.Rows[rowIndex]["LendRate"].ToString();
 
                 //logic to calculate and update fine
                 //if(rowIndex<0)
@@ -46,7 +47,7 @@ namespace NewSoft
                 //else
                 //    txtTransFine.Text = gridTrans["Fine", rowIndex].Value.ToString();
                 
-                txtRenewal.Text = ds.Rows[0]["RenewalDays"].ToString();                
+                txtRenewal.Text = ds.Rows[rowIndex]["RenewalDays"].ToString();                
                 CommonUIMethods.setBookLabel(lblBookLabel,txtTransBookid.Text);
                 if (wishRep.SearchWishList(txtTransMemId.Text).Rows.Count > 0)
                     btnMemWish.Enabled = true;
@@ -474,8 +475,18 @@ namespace NewSoft
             lblLastVisitedvalue.Text = transRep.GetMemLastVisited(txtTransMemId.Text);
             lblMemberNotes.Text = memRep.GetMemberNotes(txtTransMemId.Text);
         }
+
+        private void scanAndRead(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {                
+                leaveBookID(sender, e);
+                btnAddLoan_Click(sender, e);
+                txtTransBookid.Text = "";
+            }
+        }
         #endregion
 
-        
+
     }
 }

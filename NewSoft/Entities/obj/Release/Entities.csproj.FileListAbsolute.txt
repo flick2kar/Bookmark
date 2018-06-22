@@ -1,0 +1,11 @@
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\Entities.dll.config
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\Entities.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\Entities.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\EntityFramework.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\Utils.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\Utils.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\bin\Release\EntityFramework.xml
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Release\Entities.csprojResolveAssemblyReference.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Release\Entities.csproj.CoreCompileInputs.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Release\Entities.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Entities\obj\Release\Entities.pdb

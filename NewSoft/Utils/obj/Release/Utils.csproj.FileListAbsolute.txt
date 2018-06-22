@@ -1,0 +1,5 @@
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\bin\Release\Utils.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\bin\Release\Utils.pdb
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Release\Utils.csproj.CoreCompileInputs.cache
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Release\Utils.dll
+E:\Users\karthikst\source\repos\Bookmark\NewSoft\Utils\obj\Release\Utils.pdb
