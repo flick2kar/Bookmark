@@ -1,0 +1,14 @@
+--Count of Books by Author
+select a.authorname,count(b.bookid) CntBooks,SUBSTRING(max(b.BookID),0,3) Category,SUM(ISNULL(Oprice,BookPrice)) Price into #tempb1 from books b
+left join authors a on a.authorid=b.authorid
+left join BookPurchase bp on bp.BookID=b.BookID
+where b.BookID not like 'LS%' and b.BookID not like 'SA%' and b.BookID not like 'PC%' and b.BookID not like 'SC%' and b.BookID not like 'PT%' and b.BookID not like 'TE%' and b.BookID not like 'FL%'
+group by a.AuthorName  order by CntBooks
+select authorname,count(bt.bookid) CntRentBooks into #tempb2 from booktrans bt
+inner join books b on b.bookid=bt.bookid
+left join authors a on a.authorid=b.authorid
+where ReturnDate is null
+group by AuthorName order by count(b.bookid) desc
+select #tempb1.authorname,CntBooks,Category,CntRentBooks,Price from #tempb1
+left join #tempb2 on #tempb1.AuthorName=#tempb2.AuthorName  order by CntBooks desc
+drop table #tempb1,#tempb2
